@@ -14,7 +14,7 @@ html {
 body {
     display: grid;
     grid-template-columns: 100%;
-    /* gap: 8.125rem; */
+    gap: 8.125rem;
 }
 
 /*reusable variables*/
@@ -202,4 +202,34 @@ a {
 .card-service:hover {
     border: solid 1px var(--red);
     background-color: var(--lightgrey);
+}
+
+/*register shop*/
+
+.register-shop{
+    background-color: var(--Black);
+    padding: 3rem 0rem;
+}
+
+.text-register-shop h2{
+    color: var(--white);
+}
+
+.text-register-shop p{
+    color: var(--white);
+}
+
+.number-increment{
+    display: grid;
+    margin-top: 2rem;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+}
+
+.number-increment article p{
+    color: var(--white);
+}
+
+.number-increment article h3{
+     font-size: 3rem;
 }
