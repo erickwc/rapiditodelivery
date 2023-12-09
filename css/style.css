@@ -7,14 +7,14 @@
 
 html {
     font-size: 16px;
-    scroll-padding: 20px;
+    scroll-padding: 2rem;
     scroll-behavior: smooth;
 }
 
 body {
     display: grid;
     grid-template-columns: 100%;
-    gap: 8.125rem;
+    /* gap: 8.125rem; */
 }
 
 /*reusable variables*/
@@ -26,7 +26,7 @@ body {
     --gray: #3D3D3D;
     --lightered: #FFE1E0;
     --lightgrey: #F9F9F9;
-    --border:#EAEAEA;
+    --border: #EAEAEA;
     --hoverMain: #eb2017;
     --hoverSecond: #fff2f1;
     --hoverSecondText: #c6170f;
@@ -52,6 +52,16 @@ body {
     color: var(--Black);
 }
 
+.title-third {
+    font-size: 1rem;
+    color: var(--Black);
+}
+
+.p-second {
+    font-size: 0.9rem;
+    color: var(--gray);
+}
+
 p {
     font-size: 1rem;
     font-weight: 500;
@@ -69,6 +79,10 @@ p {
 
 /*btn*/
 
+a {
+    text-decoration: none;
+}
+
 .btn {
     display: inline-block;
     padding: 1rem 1.3rem;
@@ -77,10 +91,9 @@ p {
     border: none;
     font-size: 1rem;
     outline: none;
-    transition: 0.1s ease-in-out;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
     text-align: center;
-    text-decoration: none;
 }
 
 .btn-primary {
@@ -96,24 +109,24 @@ p {
 }
 
 /*Hover & active btn*/
-    
-.primary:hover {
+
+.btn-primary:hover {
     background-color: var(--hoverMain);
     color: var(--white);
 }
 
-.second:hover {
-    background-color: var(--hoverSecond);
+.btn-second:hover {
+    /* background-color: var(--hoverSecond); */
     border: solid 1px var(--hoverSecondText);
     color: var(--hoverSecondText);
 }
 
-.primary:active {
+.btn-primary:active {
     background-color: var(--hoverSecondText);
     color: var(--white);
 }
 
-.second:active {
+.btn-second:active {
     background-color: var(--activeSecond);
     border: solid 1px var(--hoverSecondText);
     color: var(--hoverSecondText);
@@ -135,17 +148,58 @@ p {
     color: var(--red);
 }
 
-/*gap*/
+/*grids*/
 
-.grid{
+.grid {
     display: grid;
     gap: 1rem;
 }
 
+.grid-center {
+    display: grid;
+    place-items: center;
+}
+
 /*header*/
 
-.header{
+.header {
     height: 100vh;
     display: grid;
     place-items: center;
+}
+
+.container-header {
+    width: 100%;
+}
+
+/*Services*/
+
+.cards-services {
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1.3rem;
+}
+
+.card-service {
+    border: solid 1px var(--lightered);
+    border-radius: 0.6rem;
+    padding: 1.3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.3rem;
+    transition: 0.2s ease-in-out;
+}
+
+.card-service .img-service i {
+    font-size: 1.8rem;
+    color: var(--red);
+}
+
+.text-service {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.card-service:hover {
+    border: solid 1px var(--red);
+    background-color: var(--lightgrey);
 }
