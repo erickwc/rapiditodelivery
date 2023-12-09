@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Arial';
+}
+
+html {
+    font-size: 16px;
+    scroll-padding: 20px;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 8.125rem;
+}
+
+/*reusable variables*/
+
+:root {
+    --red: #FD3930;
+    --Black: #1E1E1E;
+    --white: #FFFFFF;
+    --gray: #3D3D3D;
+    --lightered: #FFE1E0;
+    --lightgrey: #F9F9F9;
+    --border:#EAEAEA;
+    --hoverMain: #eb2017;
+    --hoverSecond: #fff2f1;
+    --hoverSecondText: #c6170f;
+    --activeSecond: #ffe1e0;
+}
+
+.container {
+    width: 80%;
+    display: grid;
+    margin: auto auto;
+    overflow: hidden;
+}
+
+/*titles & paragraphs*/
+
+.title-main {
+    font-size: 1.5rem;
+    color: var(--Black);
+}
+
+.title-second {
+    font-size: 1.3rem;
+    color: var(--Black);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.red-text {
+    color: var(--red);
+    font-size: inherit;
+}
+
+.center {
+    text-align: center;
+}
+
+/*btn*/
+
+.btn {
+    display: inline-block;
+    padding: 1rem 1.3rem;
+    width: 100%;
+    border-radius: 0.6rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--red);
+    color: var(--white);
+
+}
+
+.btn-second {
+    background-color: transparent;
+    border: solid 1px var(--red);
+    color: var(--red);
+}
+
+/*Hover & active btn*/
+    
+.primary:hover {
+    background-color: var(--hoverMain);
+    color: var(--white);
+}
+
+.second:hover {
+    background-color: var(--hoverSecond);
+    border: solid 1px var(--hoverSecondText);
+    color: var(--hoverSecondText);
+}
+
+.primary:active {
+    background-color: var(--hoverSecondText);
+    color: var(--white);
+}
+
+.second:active {
+    background-color: var(--activeSecond);
+    border: solid 1px var(--hoverSecondText);
+    color: var(--hoverSecondText);
+}
+
+/*tags*/
+
+.tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 5rem;
+    text-align: center;
+    width: auto;
+}
+
+.tag-primary {
+    background-color: var(--lightered);
+    color: var(--red);
+}
+
+/*gap*/
+
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+/*header*/
+
+.header{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
