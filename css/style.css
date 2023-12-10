@@ -74,6 +74,11 @@ p {
     font-size: inherit;
 }
 
+.white-text{
+    color: var(--white);
+    font-size: inherit;
+}
+
 .center {
     text-align: center;
 }
@@ -107,6 +112,18 @@ a {
     background-color: transparent;
     border: solid 1px var(--red);
     color: var(--red);
+}
+
+.btn-networks{
+    display: inline-block;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: var(--white);
+    background-color: var(--red);
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
 }
 
 /*Hover & active btn*/
@@ -161,7 +178,7 @@ a {
     place-items: center;
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,61 +237,49 @@ a {
 
 /*register shop*/
 
-.register-shop{
+.register-shop {
     background-color: var(--Black);
     padding: 3rem 0rem;
 }
 
-.text-register-shop h2{
-    color: var(--white);
-}
-
-.text-register-shop p{
-    color: var(--white);
-}
-
-.number-increment{
+.number-increment {
     display: grid;
     margin-top: 2rem;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
 }
 
-.number-increment article p{
-    color: var(--white);
-}
-
-.number-increment article h3{
-     font-size: 3rem;
+.number-increment article h3 {
+    font-size: 3rem;
 }
 
 /*question*/
 
-.check{
+.check {
     display: none;
 }
 
-.item-question{
+.item-question {
     border-radius: 0.8rem;
     border: solid 1px var(--border-color, var(--border));
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
-.item-question:hover{
+.item-question:hover {
     border-color: var(--red);
 }
 
-.question-link{
+.question-link {
     width: 100%;
     cursor: pointer;
     padding: 1rem;
     font-size: 1rem;
-    color:var(--red-text, --red);
+    color: var(--red-text, --red);
     transition: 0.3s ease-in-out;
 }
 
-.question-link i{
+.question-link i {
     transform: var(--rotate, 180deg);
     transition: 0.2s ease-in-out;
     font-size: 1.3rem;
@@ -282,7 +287,7 @@ a {
     padding: 0.5rem;
 }
 
-.answer-question{
+.answer-question {
     display: grid;
     grid-template-rows: var(--row, 0fr);
     transition: 0.2s ease-in-out;
@@ -290,19 +295,19 @@ a {
     overflow: hidden;
 }
 
-.content{
+.content {
     overflow: hidden;
 }
 
-.item-question:has(:checked){
-    --row:1fr;
-    --padding:0.2rem 1rem 1rem 1rem;
+.item-question:has(:checked) {
+    --row: 1fr;
+    --padding: 0.2rem 1rem 1rem 1rem;
     --rotate: rotate(180deg);
     --border-color: var(--red);
-    --red-text:var(--red);
+    --red-text: var(--red);
 }
 
-.cont-tags{
+.cont-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -310,8 +315,52 @@ a {
 
 /*schedules*/
 
-.card-schedules{
+.card-schedules {
     padding: 1.5rem;
     border: 1px solid var(--border);
-    border-radius: 0.9rem ;
+    border-radius: 0.9rem;
 }
+
+.days {
+    grid-area: days;
+}
+
+.time {
+    grid-area: time;
+}
+
+.fee {
+    grid-area: fee;
+}
+
+.container-schedules {
+    grid-template-areas:
+        "days"
+        "time"
+        "fee";
+}
+
+
+@media screen and (min-width: 800px) {
+    .container-schedules {
+        grid-template-areas:
+            "days time"
+            "fee fee";
+    }
+}
+
+
+/*footer*/
+
+.footer{
+    background-color: var(--Black);
+    padding: 3rem 0rem;
+}
+
+.buttons-networks{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+
