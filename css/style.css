@@ -74,7 +74,7 @@ p {
     font-size: inherit;
 }
 
-.white-text{
+.white-text {
     color: var(--white);
     font-size: inherit;
 }
@@ -114,7 +114,7 @@ a {
     color: var(--red);
 }
 
-.btn-networks{
+.btn-networks {
     display: inline-block;
     width: 3.5rem;
     height: 3.5rem;
@@ -150,6 +150,62 @@ a {
     color: var(--hoverSecondText);
 }
 
+/*btn toggle*/
+
+
+.container-toogle {
+    width: 51px;
+    height: 25px;
+    position: relative;
+}
+
+
+.checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.switch {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: var(--lightered);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+
+.slider {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: calc(50% - 18px/2 - 12px);
+    top: calc(50% - 18px/2);
+    border-radius: 50%;
+    background: var(--red);
+    /* box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06); */
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.checkbox:checked+.switch {
+    background-color: var(--red);
+}
+
+.checkbox:checked+.switch .slider {
+    background-color: var(--white);
+}
+
+.checkbox:checked+.switch .slider {
+    left: calc(50% - 18px/2 + 12px);
+    top: calc(50% - 18px/2);
+}
+
+
+
 /*tags*/
 
 .tag {
@@ -184,16 +240,52 @@ a {
     align-items: center;
 }
 
-/* .flex i{
-    padding:1rem;
-    font-size: 1.3rem;
+/*nav*/
+
+.nav{
+    position: fixed;
+    bottom: -100%;
+    width: 100%;
+    padding: 1.1rem 0rem;
+    background-color: rgba(255, 255, 255, 0.829);
+    /* box-shadow: 0px 3px 15px rgba(49, 49, 49, 0.082), 0px 15px 1px rgba(0, 0, 0, 0.027);  */
+    border-top: 1px solid var(--border);
+    animation: nav-bar linear both;
+    animation-timeline: scroll(root);
+    animation-range:0 150px;
+    /* transition: 0.3s ease-out; */
+    backdrop-filter: blur(10px);
+}
+
+@keyframes nav-bar {
+    to{
+        bottom: 0;
+    }
+}
+
+.btn-active {
     color: var(--red);
-} */
+}
+
+.btn-desactive{
+    color: var(--Black);
+}
+
+.nav .btn-section{
+    font-size: 0.6rem;
+    place-items: center;
+    font-size: 0.6rem;
+}
+
+.nav .btn-section i{
+    font-size: 1.5rem;
+}
+
 
 /*header*/
 
 .header {
-    height: 100vh;
+    height: 107vh;
     display: grid;
     place-items: center;
     /* padding: 50% 0 0 0; */
@@ -202,6 +294,33 @@ a {
 .container-header {
     width: 100%;
 }
+
+.logo-mode {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    padding: 1.5rem 0rem;
+    animation: bar-logo-mode linear both;
+    animation-timeline: scroll(root);
+    animation-range:0 300px;
+    transition: 0.3s ease-in-out;
+}
+
+@keyframes bar-logo-mode {
+    to{
+        top: -100%;
+    }
+}
+
+.name-logo {
+    font-family: 'Righteous';
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--Black);
+}
+
 
 /*Services*/
 
@@ -352,15 +471,13 @@ a {
 
 /*footer*/
 
-.footer{
+.footer {
     background-color: var(--Black);
     padding: 3rem 0rem;
 }
 
-.buttons-networks{
+.buttons-networks {
     display: flex;
     gap: 0.5rem;
     margin-top: 2rem;
 }
-
-
