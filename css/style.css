@@ -248,18 +248,16 @@ a {
     width: 100%;
     padding: 1.1rem 0rem;
     background-color: rgba(255, 255, 255, 0.829);
-    /* box-shadow: 0px 3px 15px rgba(49, 49, 49, 0.082), 0px 15px 1px rgba(0, 0, 0, 0.027);  */
     border-top: 1px solid var(--border);
     animation: nav-bar linear both;
     animation-timeline: scroll(root);
-    animation-range:0 150px;
-    /* transition: 0.3s ease-out; */
+    animation-range:0 300px;
     backdrop-filter: blur(10px);
 }
 
 @keyframes nav-bar {
     to{
-        bottom: 0;
+        bottom: 0%;
     }
 }
 
@@ -474,6 +472,7 @@ a {
 .footer {
     background-color: var(--Black);
     padding: 3rem 0rem;
+    margin-bottom: 5rem;
 }
 
 .buttons-networks {
