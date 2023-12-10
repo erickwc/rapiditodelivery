@@ -17,6 +17,7 @@ body {
     gap: 8.125rem;
 }
 
+
 /*reusable variables*/
 
 :root {
@@ -160,12 +161,25 @@ a {
     place-items: center;
 }
 
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* .flex i{
+    padding:1rem;
+    font-size: 1.3rem;
+    color: var(--red);
+} */
+
 /*header*/
 
 .header {
     height: 100vh;
     display: grid;
     place-items: center;
+    /* padding: 50% 0 0 0; */
 }
 
 .container-header {
@@ -232,4 +246,64 @@ a {
 
 .number-increment article h3{
      font-size: 3rem;
+}
+
+/*question*/
+
+.check{
+    display: none;
+}
+
+.item-question{
+    border-radius: 0.8rem;
+    border: solid 1px var(--border-color, var(--border));
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.item-question:hover{
+    border-color: var(--red);
+}
+
+.question-link{
+    width: 100%;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    color:var(--red-text, --red);
+    transition: 0.3s ease-in-out;
+}
+
+.question-link i{
+    transform: var(--rotate, 180deg);
+    transition: 0.2s ease-in-out;
+    font-size: 1.3rem;
+    color: var(--red);
+    padding: 0.5rem;
+}
+
+.answer-question{
+    display: grid;
+    grid-template-rows: var(--row, 0fr);
+    transition: 0.2s ease-in-out;
+    padding: var(--padding, 0rem);
+    overflow: hidden;
+}
+
+.content{
+    overflow: hidden;
+}
+
+.item-question:has(:checked){
+    --row:1fr;
+    --padding:0.2rem 1rem 1rem 1rem;
+    --rotate: rotate(180deg);
+    --border-color: var(--red);
+    --red-text:var(--red);
+}
+
+.cont-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
