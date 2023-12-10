@@ -307,3 +307,11 @@ a {
     flex-wrap: wrap;
     gap: 0.5rem;
 }
+
+/*schedules*/
+
+.card-schedules{
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.9rem ;
+}
