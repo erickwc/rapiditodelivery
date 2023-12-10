@@ -285,7 +285,7 @@ a {
 /*header*/
 
 .header {
-    height: 107vh;
+    height: 100vh;
     display: grid;
     place-items: center;
     /* padding: 50% 0 0 0; */
