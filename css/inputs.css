@@ -1,0 +1,25 @@
+.input{
+    width: 100%;
+    padding: 0.9rem 1.3rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    outline: none;
+    color: var(--gray);
+}
+
+.input:focus{
+    border: 1px solid var(--red);
+}
+
+.input-icon{
+    position: relative;
+}
+
+.input-icon .search{
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 1.3rem;
+    color: var(--red);
+}

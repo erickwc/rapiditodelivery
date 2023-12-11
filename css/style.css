@@ -91,7 +91,7 @@ a {
 
 .btn {
     display: inline-block;
-    padding: 1rem 1.3rem;
+    padding: 0.9rem 1.3rem;;
     width: 100%;
     border-radius: 0.6rem;
     border: none;
@@ -215,11 +215,46 @@ a {
     border-radius: 5rem;
     text-align: center;
     width: auto;
+    outline: none;
+    border: none;
+    transition:  0.2s ease-in-out;
 }
 
 .tag-primary {
     background-color: var(--lightered);
     color: var(--red);
+}
+
+.tag-second {
+    background-color: var(--lightgrey);
+    color: var(--gray);
+}
+
+.tag-second:focus{
+    background-color: var(--red);
+    color: var(--white);
+}
+
+.cont-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cont-tags-scroll{
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+}
+
+.cont-tags-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.cont-tags-scroll .tag{
+    cursor: pointer;
 }
 
 /*grids*/
@@ -244,20 +279,22 @@ a {
 
 .nav{
     position: fixed;
-    bottom: -100%;
+    opacity: 0;
+    bottom: 0;
     width: 100%;
     padding: 1.1rem 0rem;
     background-color: rgba(255, 255, 255, 0.829);
     border-top: 1px solid var(--border);
     animation: nav-bar linear both;
     animation-timeline: scroll(root);
-    animation-range:0 300px;
+    animation-range:0 100px;
     backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
 }
 
 @keyframes nav-bar {
     to{
-        bottom: 0%;
+        opacity: 1;
     }
 }
 
@@ -424,12 +461,6 @@ a {
     --red-text: var(--red);
 }
 
-.cont-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
 /*schedules*/
 
 .card-schedules {
@@ -479,4 +510,13 @@ a {
     display: flex;
     gap: 0.5rem;
     margin-top: 2rem;
+}
+
+
+/*--------------------Shop--------------------------*/
+
+/*header*/
+
+.categorys{
+    margin-top: 1.3rem;
 }
