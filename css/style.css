@@ -40,6 +40,7 @@ body {
     display: grid;
     overflow: hidden;
     margin: auto auto;
+    max-width: 1024px;
 }
 
 /*z-index*/
@@ -506,6 +507,10 @@ a {
     grid-area: fee;
 }
 
+.glasses{
+    grid-area: glasses;
+}
+
 .container-schedules {
     grid-template-areas:
         "days"
@@ -597,6 +602,56 @@ a {
 
 [type="checkbox"]:checked + .favorite path{
     fill: var(--red);
+}
+
+/*-------------------------about---------------------------*/
+
+.card-characteristic{
+    border: solid 1px var(--border);
+    padding: 1.3rem;
+    border-radius: 0.8rem;
+    display: grid;
+    gap: 2.3rem;
+}
+
+.card-characteristic i{
+    font-size: 2rem;
+    color: var(--red);
+    font-weight: lighter;
+}
+
+.text-chac{
+    display: grid;
+    gap: 0.6rem;
+}
+
+
+.container-cards-characteristic {
+    grid-template-areas:
+    "fee"
+    "time"
+    "driving"
+    "glasses";
+}
+
+
+@media screen and (min-width: 900px) {
+    .container-cards-characteristic {
+        grid-template-areas:
+        "fee fee"
+        "time driving"
+        "glasses glasses";
+    }
+}
+
+/*---------------------fee------------------------*/
+
+.fee-text{
+    padding: 2rem;
+    font-size: 5rem;
+    color: var(--red);
+    background-color: var(--lightered);
+    border-radius: 2rem;
 }
 
 
