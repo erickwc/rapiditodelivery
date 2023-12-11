@@ -34,11 +34,35 @@ body {
     --activeSecond: #ffe1e0;
 }
 
+
 .container {
     width: 80%;
     display: grid;
     overflow: hidden;
     margin: auto auto;
+}
+
+/*z-index*/
+
+.z-100{
+    z-index: 100;
+}
+
+.z-200{
+    z-index: 200;
+}
+
+.z-300{
+    z-index: 300;
+}
+
+.z-400{
+    z-index: 400;
+}
+
+.z-500{
+    z-index: 500;
+    
 }
 
 /*titles & paragraphs*/
@@ -526,12 +550,13 @@ a {
 
 .container-shops{
     grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    row-gap: 2rem;
+    row-gap: 3rem;
 }
 
 .card-shop .img-shop{
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .card-shop .img-shop img{
@@ -552,3 +577,27 @@ a {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+.icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.5rem;
+}
+
+.favorite {
+    width: 2rem;
+    height: 2rem;
+}
+
+.favorite path{
+    transition: 0.2s ease-in-out;
+    font-size: 3rem;
+}
+
+[type="checkbox"]:checked + .favorite path{
+    fill: var(--red);
+}
+
+
+
