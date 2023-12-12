@@ -17,10 +17,6 @@ body {
     gap: 8.125rem;
 }
 
-body:nth-of-type(1) {
-    gap: 0rem;
-}
-
 /*reusable variables*/
 
 :root {
@@ -45,6 +41,7 @@ body:nth-of-type(1) {
     margin: auto auto;
     max-width: 1024px;
 }
+
 
 /*z-index*/
 
@@ -352,7 +349,6 @@ a {
     height: 100vh;
     display: grid;
     place-items: center;
-    /* padding: 50% 0 0 0; */
 }
 
 .container-header {
