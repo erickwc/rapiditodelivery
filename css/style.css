@@ -17,6 +17,9 @@ body {
     gap: 8.125rem;
 }
 
+body:nth-of-type(1) {
+    gap: 0rem;
+}
 
 /*reusable variables*/
 
@@ -313,7 +316,7 @@ a {
     border-top: 1px solid var(--border);
     animation: nav-bar linear both;
     animation-timeline: scroll(root);
-    animation-range:0 100px;
+    animation-range:0 50px;
     backdrop-filter: blur(10px);
     transition: 0.3s ease-in-out;
 }
