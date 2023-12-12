@@ -511,6 +511,8 @@ a {
     grid-area: glasses;
 }
 
+
+
 .container-schedules {
     grid-template-areas:
         "days"
@@ -631,7 +633,10 @@ a {
     "fee"
     "time"
     "driving"
-    "glasses";
+    "glasses"
+    "whatsapp"
+    "facebook";
+    
 }
 
 
@@ -640,7 +645,9 @@ a {
         grid-template-areas:
         "fee fee"
         "time driving"
-        "glasses glasses";
+        "glasses glasses"
+        "whatsapp facebook";
+        
     }
 }
 
@@ -654,5 +661,13 @@ a {
     border-radius: 2rem;
 }
 
+
+.whatsapp{
+    grid-area: whatsapp;
+}
+
+.facebook{
+    grid-area: facebook;
+}
 
 
