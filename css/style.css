@@ -15,6 +15,8 @@ body {
     display: grid;
     grid-template-columns: 100%;
     gap: 8.125rem;
+    background-color: var(--white);
+    transition: 0.3s ease-in-out;
 }
 
 /*reusable variables*/
@@ -32,6 +34,8 @@ body {
     --hoverSecondText: #c6170f;
     --activeSecond: #ffe1e0;
 }
+
+
 
 
 .container {
@@ -116,7 +120,7 @@ a {
 
 .btn {
     display: inline-block;
-    padding: 0.9rem 1.3rem;;
+    padding: 0.8rem 1.5rem;
     width: 100%;
     border-radius: 0.6rem;
     border: none;
@@ -139,6 +143,12 @@ a {
     color: var(--red);
 }
 
+.btn-third {
+    background-color: var(--lightered);
+    color: var(--red);
+}
+
+
 .btn-networks {
     display: inline-block;
     width: 3.5rem;
@@ -151,6 +161,18 @@ a {
     font-size: 1.3rem;
 }
 
+
+.btn-amount {
+    background-color: var(--red);
+    border-radius: 5rem;
+    height: 2.7rem;
+    width: 2.7rem;
+    display: grid;
+    place-items: center;
+    border: none;
+    color: var(--white);
+    font-size: 1rem;
+}
 /*Hover & active btn*/
 
 .btn-primary:hover {
@@ -309,7 +331,8 @@ a {
     bottom: 0;
     width: 100%;
     padding: 1.1rem 0rem;
-    background-color: rgba(255, 255, 255, 0.829);
+    /* background-color: rgba(255, 255, 255, 0.829); */
+    background-color: var(--white);
     border-top: 1px solid var(--border);
     animation: nav-bar linear both;
     animation-timeline: scroll(root);
@@ -584,6 +607,10 @@ a {
     gap: 0.3rem;
 }
 
+.text-shop h2{
+    font-size: 1.2rem;
+}
+
 .text-shop .hide{
     white-space: nowrap;
     overflow: hidden;
@@ -598,13 +625,17 @@ a {
 }
 
 .favorite {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.068);
+    backdrop-filter: blur(20px);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
 
 .favorite path{
     transition: 0.2s ease-in-out;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 [type="checkbox"]:checked + .favorite path{
@@ -676,3 +707,133 @@ a {
 }
 
 
+/*open-container*/
+
+.open-shops-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e3d;
+}
+
+.open-container{
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 1rem; */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    /* padding-top: 2.5rem; */
+    position: relative;
+}
+
+.grid-open-shop{
+    display: grid;
+    gap: 1.8rem;
+}
+
+.logo-shop{
+    width:100%;
+    height: 25rem;
+    position: relative;
+}
+
+.logo-shop img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-menu-shop{
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.img-menu-shop img{
+    width: 10rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.content-shop{
+    margin-top: -1.5rem;
+    background-color: var(--white);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: absolute;
+    padding-top: 2.2rem;
+    width: 100%;
+}
+
+.form-add-product {
+    margin-top: 2rem;
+}
+
+.regresar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--Black);
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    display: grid;
+    place-items: center;
+}
+
+.product-card{
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+    border-radius: 1rem;
+}
+
+.name-product{
+    font-size: 1.1rem;
+    color: var(--Black);
+}
+
+.desc-product{
+    font-size: 1rem;
+    color: var(--gray);
+    border: none;
+    outline: none;
+}
+
+.btn-actions{
+    gap: 0.5rem;
+}
+
+.amount-product{
+    /* display: flex; */
+    align-items: center;
+    gap: 1rem;
+    display: none;
+}
+
+.btn-update{
+    display: none;
+}
+
+.amount{
+    background-color: var(--lightered);
+    color: var(--red);
+    padding: 0.4rem;
+    border: none;
+    outline: none;
+    display: inline-block;
+    border-radius: 0.4rem;
+    width: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}

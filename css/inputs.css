@@ -1,11 +1,13 @@
 .input{
     width: 100%;
-    padding: 0.9rem 1.3rem;
+    padding: 0.8rem 1rem;
     border: 1px solid var(--border);
     border-radius: 0.6rem;
     font-size: 1rem;
     outline: none;
     color: var(--gray);
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
 }
 
 .input:focus{
@@ -22,4 +24,9 @@
     top: 18px;
     font-size: 1.3rem;
     color: var(--red);
+}
+
+.input-container{
+    display: grid;
+    gap: 0.5rem;
 }
