@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/@vectopus/atlas-icons/style.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/inputs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -189,7 +190,7 @@
                         <section class="menu-shop grid">
                             <section>
                                 <h3 class="title-third">Menu</h3>
-                                <p>Presiona una imagen para poder ver el menu completo.</p>
+                                <p>Presiona una imagen para verla completa.</p>
                             </section>
                             <section class="img-menu-shop">
                                 <img src="https://img.freepik.com/premium-photo/logo-burger-brand-simple-vector-psychedelic-art_880763-5052.jpg"
@@ -205,7 +206,7 @@
                             </section>
                         </section>
                         <section class="tags grid">
-                            <h3 class="title-third">Etiquetas</h3>
+                            <!-- <h3 class="title-third">Etiquetas</h3> -->
                             <article class="cont-tags">
                                 <p class="tag tag-second">Hamburguesas</p>
                                 <p class="tag tag-second">Express</p>  
@@ -218,11 +219,14 @@
 
 
                         <section class="form-add-product grid-open-shop">
-                            <h2 class="title-second">Comenzar mi pedido.</h2>
+                            <section class="grid"> 
+                                <h2 class="title-second">Comenzar <span class="red-text">mi pedido</span></h2>
+                            </section>
+                           
                             <form action="" class="grid-open-shop">
                                 <article class="input-container">
                                     <label for="">Producto</label> 
-                                    <input class="input descP" placeholder="Escribe aca tu producto" type="text">
+                                    <input class="input descP" placeholder="Descripción completa del producto..." type="text">
                                 </article>
                                 <article class="input-container">
                                     <label for="">Cantidad de producto</label>
@@ -232,8 +236,8 @@
                             </form>
                         </section>
 
-                        <section class="grid">
-                            <h2 class="title-second">Productos Agregados</h2>
+                        <section class="grid form-add-product">
+                            <h2 class="title-second">Productos <span class="red-text">agregados</span></h2>
                             <p class="ProductAmount">0 Agregados</p>
                         </section>
 
@@ -257,11 +261,20 @@
                                 </section>
                             </article> -->
                         </section>
+
+                        <form id="formulario" class="formulario" action="">
+                       
+                            <textarea class="input-container-added-product" name="" id="" cols="30" rows="10"></textarea>
+                            <button  type="submit" id="submit"> Enviar WhatsApp</button>
+                        </form>
+
                 </article>
             </article>
         </section>
 
     </main>
+
+    
 
 
 

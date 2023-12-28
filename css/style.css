@@ -756,8 +756,8 @@ a {
 }
 
 .img-menu-shop img{
-    width: 10rem;
-    height: 14rem;
+    width: 12rem;
+    height: 16rem;
     object-fit: cover;
     border-radius: 0.5rem;
 }
@@ -773,7 +773,7 @@ a {
 }
 
 .form-add-product {
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .regresar{
@@ -836,4 +836,8 @@ a {
     width: 2rem;
     text-align: center;
     font-size: 1rem;
+}
+
+.text-products-added{
+    margin-top: 4rem;
 }
