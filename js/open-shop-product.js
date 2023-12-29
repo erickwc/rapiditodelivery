@@ -32,25 +32,14 @@ function assignEventsBtnActions() {
 
 /**/
 
-const productos = [];
-let productIdCounter = 1;
-
 const btnAddProduct = document.querySelector('.btn-add-product');
 const productsContainer = document.querySelector('.products-added');
-let allProductsInfo = "";
-
-function updateAllProductsInfo() {
-    allProductsInfo = productos.map(producto => `Producto - Cantidad(${producto.productoCantidad})\n ${producto.productoDescripcion}\n\n`).join('');
-}
 
 function AddedProduct() {
     const descProduct = document.querySelector('.descP').value;
     const numberProduct = document.querySelector('.numberP').value;
-    const inputContainerAddedProduct = document.querySelector('.input-container-added-product');
 
-    if (descProduct.trim() !== "" && numberProduct.trim() !== "")  {
-
-        const productId = `${productIdCounter++}`;
+    if (descProduct.trim() !== "" && numberProduct.trim() !== "") {
 
         let cardProduct = document.createElement('article');
         cardProduct.classList.add('product-card');
@@ -112,20 +101,9 @@ function AddedProduct() {
         btnUpdateSection.appendChild(btnUpdate);
 
         productsContainer.appendChild(cardProduct);
-
-        productos.push({
-            productId: productId,
-            productoCantidad: numberProduct,
-            productoDescripcion: descProduct
-        });
-        updateAllProductsInfo();
-        
-
-        // Llama a la función fuera de AddedProduct después de haber agregado un producto
         assignEventsBtnActions();
         assignEventsBtnAmount();
 
-        inputContainerAddedProduct.value = allProductsInfo;
     } else {
         alert("Agrega datos válidos");
     }
@@ -133,7 +111,6 @@ function AddedProduct() {
 
 
 btnAddProduct.addEventListener('click', AddedProduct);
-console.log(productos);
 
 
 
@@ -189,24 +166,43 @@ function isMobile() {
 }
 
 
-
 const formulario = document.querySelector('#formulario');
 const buttonSubmit = document.querySelector('#submit');
 const urlDesktop = 'https://web.whatsapp.com/';
 const urlMobile = 'whatsapp://';
 const telefono = '50377774562';
 
+
+function RecoverInformation() {
+    const productCards = document.querySelectorAll('.product-card');
+    let productInfo = '';
+
+    productCards.forEach((card, index) => {
+        const productName = card.querySelector('.name-product').innerText;
+        const productDescription = card.querySelector('.desc-product').textContent;
+        productInfo += `\n*${productName}*\n${productDescription}\n\n`; // Agrega dos saltos de línea
+    });
+
+    // productInfoTextarea.value = productInfo;
+    
+    const mensaje = `send?phone=${telefono}&text=Enviado desde la web%0AInformacion de pedido%0A${encodeURIComponent(productInfo)}`;
+    
+    if (isMobile()) {
+        window.open(urlMobile + mensaje, '_blank');
+    } else {
+        window.open(urlDesktop + mensaje, '_blank');
+    }
+
+    
+}
+
+
 formulario.addEventListener('submit', (event) => {
-    event.preventDefault()
-    buttonSubmit.disabled = true
-    setTimeout(() => {
-        let productos = document.querySelector('.input-container-added-product').value
-        let mensaje = 'send?phone=' + telefono + '&text=*_Formulario Easy App CODE_*%0A*¿Cual es tu nombre?*%0A' +  productos + '%0A*¿Cuáles son tus apellidos?*%0A' + productos + '%0A*¿Cuál es tu correo electrónico?*%0A' + productos + ''
-        if(isMobile()) {
-            window.open(urlMobile + mensaje, '_blank')
-        }else{
-            window.open(urlDesktop + mensaje, '_blank')
-        }
-        buttonSubmit.disabled = false
-    }, 3000);
-});
+    event.preventDefault();
+    buttonSubmit.disabled = true;
+    const inputContainerAddedProduct = document.querySelector('.input-container-added-product');
+    RecoverInformation();
+}
+);
+
+

@@ -46,10 +46,10 @@
         <section class="container-header grid">
             <section class="text-header grid">
                 <div class="center">
-                    <p class="tag tag-primary">Tu decides como quieres ordenar.</p>
+                    <!-- <p class="tag tag-primary">Tu decides como quieres ordenar.</p> -->
                 </div>
-                <h2 class="center title-main"><span class="red-text">Comercios aliados</span> a Rapidito Delivery</h2>
-                <p class="center">Busca tu comercio aca abajo y <b>¡Encuentralo rapidito!</b></p>
+                <h2 class="center title-main"><span class="red-text">Comercios aliados</span> con Rapidito Delivery</h2>
+                <!-- <p class="center">Busca aca tu comercio</p> -->
             </section>
             <section class="search-header grid">
                 <div class="input-icon">
@@ -80,7 +80,7 @@
         <section class="container-shops grid">
             <article class="card-shop grid">
                 <section href="#" class="img-shop">
-                    <a href="#"><img class="z-100"
+                    <a href="#burguerKing"><img class="z-100"
                             src="https://img.freepik.com/premium-photo/logo-burger-brand-simple-vector-psychedelic-art_880763-5052.jpg"
                             alt=""></a>
                     <div class="icon z-300">
@@ -175,11 +175,11 @@
             </article>
         </section>
 
-        <section class="open-shops-container z-500">
-            <article id="#burguerKing" class="open-container">
+        <section id="burguerKing" class="open-shops-container z-500">
+            <article  class="open-container">
                 <section class="logo-shop">
                     <img src="https://img.freepik.com/premium-photo/logo-burger-brand-simple-vector-psychedelic-art_880763-5052.jpg" alt="">
-                    <i class="at-arrow-left regresar"></i>
+                    <a href="#"><i class="at-arrow-left regresar"></i></a>
                 </section>
                 <article class="content-shop">
                     <section class="container grid-open-shop">
@@ -262,10 +262,33 @@
                             </article> -->
                         </section>
 
-                        <form id="formulario" class="formulario" action="">
-                       
-                            <textarea class="input-container-added-product" name="" id="" cols="30" rows="10"></textarea>
-                            <button  type="submit" id="submit"> Enviar WhatsApp</button>
+                        <section class="grid form-add-product">
+                            <h2 class="title-second">Datos de <span class="red-text">entrega</span></h2>
+                        </section>
+
+                        <form id="formulario" class="formulario grid-open-shop" action="">
+                            <article class="input-container">
+                                <label for="">Dirección de entrega:</label>
+                                <input class="input numberP" pattern="[a-zA-Z]{2,}" required placeholder="Direccion de entrega de tu pedido..." type="text">
+                            </article>
+                            <article class="input-container">
+                                <label for="">Numero de whatsapp:</label>
+                                <input class="input numberP" placeholder="Numero de whatsapp de contacto..." type="text">
+                            </article>
+                            <article class="input-container">
+                                <label for="">Forma de pago:</label>
+                                <select class="input combobox" id="productos" name="productos">
+                                    <option value="producto1">Efectivo</option>
+                                    <option value="producto2">Tarjeta Debito</option>
+                                    <option value="producto3">Tarjeta Credito</option>
+                                    <option value="producto3">Chivo Wallet</option>
+                                    <option value="producto3">Tigo Money</option>
+                                  </select>
+                            </article>
+
+                            <p><b>Cada pedido esta sujeto a una tarifa inicial de 2.50$* esta dependera del destino final del pedido.</b></p>
+                           
+                            <button class="btn btn-primary"  type="submit" id="submit">Enviar a WhatsApp</button>
                         </form>
 
                 </article>

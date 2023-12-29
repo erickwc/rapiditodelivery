@@ -23,9 +23,9 @@ body {
 
 :root {
     --red: #FD3930;
-    --Black: #1E1E1E;
+    --Black: #05090A;
     --white: #FFFFFF;
-    --gray: #3D3D3D;
+    --gray: #23272A;
     --lightered: #FFE1E0;
     --lightgrey: #F9F9F9;
     --border: #EAEAEA;
@@ -34,8 +34,6 @@ body {
     --hoverSecondText: #c6170f;
     --activeSecond: #ffe1e0;
 }
-
-
 
 
 .container {
@@ -195,6 +193,58 @@ a {
     background-color: var(--activeSecond);
     border: solid 1px var(--hoverSecondText);
     color: var(--hoverSecondText);
+}
+
+/*Inputs*/
+
+.input{
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    outline: none;
+    font-size: 1rem;
+    color: var(--Black);
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.input:hover{
+    border: 1px solid var(--lightered);
+}
+
+.input:focus{
+    border: 1px solid var(--red);
+    background-color: var(--lightgrey);
+    color: var(--red);
+}
+
+.input-icon{
+    position: relative;
+}
+
+.input-icon .search{
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    font-size: 1.3rem;
+    color: var(--red);
+}
+
+.input-container{
+    display: grid;
+    gap: 0.5rem;
+}
+
+.combobox{
+    background-color: var(--lightgrey);
+    border: 1px solid var(--lightgrey);
+    cursor: pointer;
+}
+
+.combobox:focus{
+    border: 1px solid var(--border);
+    color: var(--gray);
 }
 
 /*btn toggle*/
@@ -631,6 +681,7 @@ a {
     backdrop-filter: blur(20px);
     padding: 0.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .favorite path{
@@ -718,6 +769,12 @@ a {
     width: 100%;
     height: 100%;
     background-color: #1e1e1e3d;
+    transition: 0.3s ease-in-out;
+    transform: translateY(100%);
+}
+
+.open-shops-container:target{
+    transform: translateY(0%);
 }
 
 .open-container{
@@ -729,6 +786,8 @@ a {
     scroll-snap-type: y mandatory;
     /* padding-top: 2.5rem; */
     position: relative;
+    /* display: none; */
+   
 }
 
 .grid-open-shop{
