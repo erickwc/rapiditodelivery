@@ -14,6 +14,11 @@ function assignEventsBtnActions() {
         btnUpdate[index].style.display = 'block';
     }
 
+    function removeProduct(index) {
+        // Eliminar la tarjeta del producto del contenedor
+        productsContainer.removeChild(cardProduct[index]);
+    }
+
     function removeSection(index) {
         amountSections[index].style.display = 'none';
         btnSections[index].style.display = 'flex';
@@ -27,6 +32,12 @@ function assignEventsBtnActions() {
     btnUpdate.forEach((btn, index) => {
         btn.addEventListener("click", () => removeSection(index));
     });
+
+    btnDelete.forEach((btn, index) => {
+        btn.addEventListener("click", () => removeProduct(index));
+    });
+
+
 }
 
 
@@ -90,6 +101,11 @@ function AddedProduct() {
         btnDelete.classList.add('btn', 'btn-third', 'btnDelete');
         btnDelete.textContent = 'Eliminar'
         btnActions.appendChild(btnDelete);
+        btnDelete.addEventListener('click', function () {
+            // Llamar a la función para eliminar el producto
+            removeProduct(cardProduct);
+        });
+        btnActions.appendChild(btnDelete);
 
         let btnUpdateSection = document.createElement('section');
         btnUpdateSection.classList.add('flex', 'btn-update');
@@ -107,6 +123,10 @@ function AddedProduct() {
     } else {
         alert("Agrega datos válidos");
     }
+}
+
+function removeProduct(product) {
+    productsContainer.removeChild(product);
 }
 
 
@@ -165,8 +185,9 @@ function isMobile() {
     return false;
 }
 
-
+const typedelivery = document.querySelector('#typedelivery').value;
 const formulario = document.querySelector('#formulario');
+const Shop = document.querySelector('#shopname').textContent;
 const buttonSubmit = document.querySelector('#submit');
 const urlDesktop = 'https://web.whatsapp.com/';
 const urlMobile = 'whatsapp://';
@@ -174,35 +195,92 @@ const telefono = '50377774562';
 
 
 function RecoverInformation() {
+
     const productCards = document.querySelectorAll('.product-card');
     let productInfo = '';
 
     productCards.forEach((card, index) => {
         const productName = card.querySelector('.name-product').innerText;
         const productDescription = card.querySelector('.desc-product').textContent;
-        productInfo += `\n*${productName}*\n${productDescription}\n\n`; // Agrega dos saltos de línea
+        productInfo += `*${productName}*\n${productDescription}\n\n`; // Agrega dos saltos de línea
     });
 
+    const direction = document.querySelector('#direccion').value;
+    const whatsapp = document.querySelector('#whatsapp').value;
+    const payDelivery = document.querySelector('#typepay').value;
+
+    const typedelivery = document.querySelector('#typedelivery').value;
+    const time = document.querySelector("#dateDeliveryinput").value;
+    const date = document.querySelector("#timeDeliveryinput").value;
+
     // productInfoTextarea.value = productInfo;
-    
-    const mensaje = `send?phone=${telefono}&text=Enviado desde la web%0AInformacion de pedido%0A${encodeURIComponent(productInfo)}`;
-    
+
+    let additionalInfo = '';
+
+    if (typedelivery === "Agendado") {
+        // Agrega la hora y fecha solo si el tipo de entrega es "Agendado"
+        additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
+    }
+
+    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${payDelivery}%0A%0A*Tipo de pedido:*%0A${typedelivery}${additionalInfo}`;
+
+    if (isMobile()) {
+        window.open(urlMobile + mensaje, '_blank');
+    } else {
+        window.open(urlDesktop + mensaje, '_blank');
+    }
     if (isMobile()) {
         window.open(urlMobile + mensaje, '_blank');
     } else {
         window.open(urlDesktop + mensaje, '_blank');
     }
 
-    
 }
 
 
 formulario.addEventListener('submit', (event) => {
     event.preventDefault();
-    buttonSubmit.disabled = true;
-    const inputContainerAddedProduct = document.querySelector('.input-container-added-product');
     RecoverInformation();
 }
 );
+
+document.addEventListener("DOMContentLoaded", function () {
+    const selectElement = document.querySelector('#typedelivery');
+    const time = document.querySelector("#timeDelivery");
+    const date = document.querySelector("#dateDelivery");
+
+
+    selectElement.addEventListener("change", function () {
+        const selectedValue = selectElement.value;
+
+        if (selectedValue === "Pedido de momento") {
+            funcionPedidoMomento();
+        } else if (selectedValue === "Agendado") {
+            funcionAgendarPedido();
+        }
+    });
+
+    function funcionPedidoMomento() {
+        time.style.display = 'none';
+        date.style.display = 'none';
+    }
+
+    function funcionAgendarPedido() {
+        time.style.display = 'grid';
+        date.style.display = 'grid';
+    }
+});
+
+
+const navOpenShop = document.querySelector('#nav-open-shop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { 
+        navOpenShop.classList.add('blur');
+    } else {
+        navOpenShop.classList.remove('blur');
+    }
+});
+
 
 

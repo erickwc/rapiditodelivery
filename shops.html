@@ -178,13 +178,19 @@
         <section id="burguerKing" class="open-shops-container z-500">
             <article  class="open-container">
                 <section class="logo-shop">
+                    
                     <img src="https://img.freepik.com/premium-photo/logo-burger-brand-simple-vector-psychedelic-art_880763-5052.jpg" alt="">
-                    <a href="#"><i class="at-arrow-left regresar"></i></a>
+                    
+                    <nav id="nav-open-shop" class="nav-open-shop flex z-500">
+                        <a href="#shop"><i class="at-arrow-left regresar"></i></a>
+                        <h3 id="shopname" class="title-third">Burguer King</h3>
+                    </nav>
+                 
                 </section>
                 <article class="content-shop">
                     <section class="container grid-open-shop">
                         <article class="flex">
-                            <h3 class="title-second">Burguer King</h3>
+                            <h3 id="shopname" class="title-second">Burguer King</h3>
                             <p>15-30 min.</p>
                         </article>
                         <section class="menu-shop grid">
@@ -232,7 +238,7 @@
                                     <label for="">Cantidad de producto</label>
                                     <input class="input numberP" placeholder="0" type="number">
                                 </article>
-                                <a class="btn btn-primary btn-add-product" href="#">Agregar mi producto</a>
+                                <p class="btn btn-primary btn-add-product">Agregar mi producto</p>  
                             </form>
                         </section>
 
@@ -269,21 +275,38 @@
                         <form id="formulario" class="formulario grid-open-shop" action="">
                             <article class="input-container">
                                 <label for="">Dirección de entrega:</label>
-                                <input class="input numberP" pattern="[a-zA-Z]{2,}" required placeholder="Direccion de entrega de tu pedido..." type="text">
+                                <input id="direccion" class="input numberP" required placeholder="Direccion de entrega de tu pedido..." type="text">
                             </article>
                             <article class="input-container">
                                 <label for="">Numero de whatsapp:</label>
-                                <input class="input numberP" placeholder="Numero de whatsapp de contacto..." type="text">
+                                <input id="whatsapp" class="input numberP" placeholder="Numero de whatsapp de contacto..." type="text">
                             </article>
                             <article class="input-container">
                                 <label for="">Forma de pago:</label>
-                                <select class="input combobox" id="productos" name="productos">
-                                    <option value="producto1">Efectivo</option>
-                                    <option value="producto2">Tarjeta Debito</option>
-                                    <option value="producto3">Tarjeta Credito</option>
-                                    <option value="producto3">Chivo Wallet</option>
-                                    <option value="producto3">Tigo Money</option>
+                                <select id="typepay" class="input combobox">
+                                    <option value="Efectivo">Efectivo</option>
+                                    <option value="Tarjeta Debito">Tarjeta Debito</option>
+                                    <option value="Tarjeta Credito">Tarjeta Credito</option>
+                                    <option value="Chivo Wallet">Chivo Wallet</option>
+                                    <option value="Tigo Money">Tigo Money</option>
+                                    <option value="Cubo">Cubo</option>
                                   </select>
+                            </article>
+                            <article class="input-container">
+                                <label for="">Tipo de pedido:</label>
+                                <select id="typedelivery" class="input combobox">
+                                    <option value="Pedido de momento">Pedido del momento</option>
+                                    <option value="Agendado">Agendar pedido</option>
+                                  </select>
+                            </article>
+                            <article id="dateDelivery" style="display: none;" class="input-container">
+                                <label for="dateDelivery">Fecha de entrega:</label>
+                                <input id="dateDeliveryinput"  class="input numberP" type="date">
+                            </article>
+                            
+                            <article id="timeDelivery" style="display: none;" class="input-container">
+                                <label for="timeDelivery">Hora de entrega:</label>
+                                <input id="timeDeliveryinput" class="input numberP" type="time">
                             </article>
 
                             <p><b>Cada pedido esta sujeto a una tarifa inicial de 2.50$* esta dependera del destino final del pedido.</b></p>
