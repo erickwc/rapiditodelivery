@@ -212,7 +212,7 @@ function RecoverInformation() {
 
     productCards.forEach((card, index) => {
         const productName = card.querySelector('.name-product').innerText;
-        const productDescription = card.querySelector('.desc-product').textContent;
+        const productDescription = card.querySelector('.desc-product').value;
         productInfo += `*${productName}*\n${productDescription}\n\n`; // Agrega dos saltos de línea
     });
 
@@ -224,27 +224,29 @@ function RecoverInformation() {
     const time = document.querySelector("#dateDeliveryinput").value;
     const date = document.querySelector("#timeDeliveryinput").value;
 
+    alert(productInfo);
+
     // productInfoTextarea.value = productInfo;
 
-    let additionalInfo = '';
+    // let additionalInfo = '';
 
-    if (typedelivery === "Agendado") {
-        // Agrega la hora y fecha solo si el tipo de entrega es "Agendado"
-        additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
-    }
+    // if (typedelivery === "Agendado") {
+    //     // Agrega la hora y fecha solo si el tipo de entrega es "Agendado"
+    //     additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
+    // }
 
-    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
+    // const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
 
-    if (isMobile()) {
-        window.open(urlMobile + mensaje, '_blank');
-    } else {
-        window.open(urlDesktop + mensaje, '_blank');
-    }
-    if (isMobile()) {
-        window.open(urlMobile + mensaje, '_blank');
-    } else {
-        window.open(urlDesktop + mensaje, '_blank');
-    }
+    // if (isMobile()) {
+    //     window.open(urlMobile + mensaje, '_blank');
+    // } else {
+    //     window.open(urlDesktop + mensaje, '_blank');
+    // }
+    // if (isMobile()) {
+    //     window.open(urlMobile + mensaje, '_blank');
+    // } else {
+    //     window.open(urlDesktop + mensaje, '_blank');
+    // }
 
 }
 
