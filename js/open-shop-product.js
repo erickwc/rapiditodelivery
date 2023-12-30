@@ -15,7 +15,6 @@ function assignEventsBtnActions() {
     }
 
     function removeProduct(index) {
-        // Eliminar la tarjeta del producto del contenedor
         productsContainer.removeChild(cardProduct[index]);
     }
 
@@ -45,6 +44,7 @@ function assignEventsBtnActions() {
 
 const btnAddProduct = document.querySelector('.btn-add-product');
 const productsContainer = document.querySelector('.products-added');
+
 
 function AddedProduct() {
     const descProduct = document.querySelector('.descP').value;
@@ -104,8 +104,10 @@ function AddedProduct() {
         btnDelete.addEventListener('click', function () {
             // Llamar a la función para eliminar el producto
             removeProduct(cardProduct);
+            updateTotalProducts(-1);
         });
         btnActions.appendChild(btnDelete);
+
 
         let btnUpdateSection = document.createElement('section');
         btnUpdateSection.classList.add('flex', 'btn-update');
@@ -119,9 +121,10 @@ function AddedProduct() {
         productsContainer.appendChild(cardProduct);
         assignEventsBtnActions();
         assignEventsBtnAmount();
+        updateTotalProducts(1); 
 
     } else {
-        alert("Agrega datos válidos");
+      
     }
 }
 
@@ -131,7 +134,6 @@ function removeProduct(product) {
 
 
 btnAddProduct.addEventListener('click', AddedProduct);
-
 
 
 function assignEventsBtnAmount() {
@@ -172,6 +174,15 @@ function assignEventsBtnAmount() {
     });
 
 }
+
+const AmountProductAdded = document.querySelector('.AmountProductAdded');
+let totalProducts = 0;
+
+function updateTotalProducts(value) {
+    totalProducts += value;
+    AmountProductAdded.textContent = totalProducts; // Actualizar el elemento AmountProductAdded
+}
+
 
 
 function isMobile() {
@@ -222,7 +233,7 @@ function RecoverInformation() {
         additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
     }
 
-    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${payDelivery}%0A%0A*Tipo de pedido:*%0A${typedelivery}${additionalInfo}`;
+    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
 
     if (isMobile()) {
         window.open(urlMobile + mensaje, '_blank');
@@ -283,4 +294,6 @@ window.addEventListener('scroll', () => {
 });
 
 
+
+/**/
 

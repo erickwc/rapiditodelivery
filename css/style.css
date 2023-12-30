@@ -214,6 +214,15 @@ a {
     transition: 0.2s ease-in-out;
 }
 
+textarea{
+    resize: none;
+    overflow-y: hidden;
+}
+
+::-webkit-scrollbar-corner{
+    display: none;
+}
+
 .input:hover {
     border: 1px solid var(--lightered);
 }
@@ -765,7 +774,7 @@ a {
 
 /*open-container*/
 
-.open-shops-container {
+.open-shop {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -779,7 +788,7 @@ a {
    
 }
 
-.open-shops-container:target {
+.open-shop:target {
     transform: translateY(0%);
    
 }
@@ -788,14 +797,14 @@ a {
     background-color: white;
     height: 100%;
     width: 100%;
-    overflow-y: auto;
+    overflow-y: overlay;
     scroll-snap-type: y mandatory;
     position: relative;
 }
 
 .grid-open-shop {
     display: grid;
-    gap: 1.8rem;
+    gap: 2.5rem;
 }
 
 .logo-shop {
@@ -815,6 +824,7 @@ a {
     gap: 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    border-radius: 0.5rem;
 }
 
 .img-menu-shop img {
