@@ -858,11 +858,13 @@ textarea{
     display: flex;
     gap: 1rem;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     border-radius: 0.5rem;
+    height: 16rem;
 }
 
-.img-menu-shop img {
+.img-menu-shop .img-menu img {
     width: 12rem;
     height: 16rem;
     object-fit: cover;
@@ -876,12 +878,12 @@ textarea{
     height: 100%;
     width: 100%;
     background-color: var(--Black);
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     padding: 1rem;
     gap: 1rem;
-    align-items: center;
+    align-items: end;
     justify-content: center;
+    overflow-x: auto;
 }
 
 .img-menu-shop .img-full-screen img{
@@ -889,6 +891,7 @@ textarea{
    height: auto;
    object-fit:contain;
    border-radius: 0.6rem;
+   max-width: 500px;
 }
 
 .btn-exit{
@@ -896,11 +899,16 @@ textarea{
     display: block;
     width: auto;
     height: auto;
-    position: absolute;
     bottom: 0;
     right: 0;
-    margin: 1rem;
 }
+
+.desc-menu{
+    font-size: 0.9rem;
+    color: var(--white);
+    line-height: 1.5rem;
+}
+
 
 .content-shop {
     margin-top: -1.5rem;
