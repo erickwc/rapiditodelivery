@@ -363,7 +363,7 @@ function RecoverInformation() {
         additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
     }
 
-    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
+    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${payDelivery}%0A%0A*Tipo de pedido:*%0A${typedelivery}${additionalInfo}`;
 
     if (isMobile()) {
         window.open(urlMobile + mensaje, '_blank');
