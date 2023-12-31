@@ -22,27 +22,6 @@ textareas.forEach(function (textarea) {
 });
 
 
-function validarTexto(texto) {
-    var input = document.querySelectorAll('.input');
-
-    if (texto.length > 0) {
-      // Puedes agregar cualquier lógica de validación aquí
-      // Por ejemplo, aquí se verifica si el texto contiene solo letras
-      var soloLetras = /^[a-zA-Z]+$/.test(texto);
-
-      if (soloLetras) {
-        input.classList.remove("texto-invalido");
-        input.classList.add("texto-valido");
-      } else {
-        input.classList.remove("texto-valido");
-        input.classList.add("texto-invalido");
-      }
-    } else {
-      // Si el campo está vacío, quitar cualquier clase de color
-      input.classList.remove("texto-valido", "texto-invalido");
-    }
-  }
-
 /*btn-actions*/
 
 function assignEventsBtnActions() {
@@ -369,6 +348,25 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.img-menu-shop .img-menu');
+
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            toggleFullScreen(image);
+        });
+    });
+
+    function toggleFullScreen(image) {
+        if (image.classList.contains('img-full-screen')) {
+            image.classList.remove('img-full-screen');
+        } else {
+            // Remueve la clase 'img-fullscreen' de todas las imágenes antes de agregarla a la actual
+            images.forEach(img => img.classList.remove('.img-full-screen'));
+            image.classList.add('img-full-screen');
+        }
+    }
+});
 
 
 

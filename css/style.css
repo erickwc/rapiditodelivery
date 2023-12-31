@@ -869,6 +869,39 @@ textarea{
     border-radius: 0.5rem;
 }
 
+.img-menu-shop .img-full-screen{
+    position: fixed;
+    z-index: 800;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--Black);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-menu-shop .img-full-screen img{
+   width: 100%;
+   height: auto;
+   object-fit:contain;
+   border-radius: 0.6rem;
+}
+
+.btn-exit{
+    z-index: 1000;
+    display: block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+}
+
 .content-shop {
     margin-top: -1.5rem;
     background-color: var(--white);
