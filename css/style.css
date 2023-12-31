@@ -861,12 +861,12 @@ textarea{
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     border-radius: 0.5rem;
-    height: 16rem;
+    height: 18rem;
 }
 
 .img-menu-shop .img-menu img {
-    width: 12rem;
-    height: 16rem;
+    width: 14rem;
+    height: 18rem;
     object-fit: cover;
     border-radius: 0.5rem;
 }
