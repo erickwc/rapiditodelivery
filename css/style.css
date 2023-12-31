@@ -877,8 +877,7 @@ textarea{
     inset: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(108, 108, 108, 0.374);
-    backdrop-filter: blur(3px);
+    background-color: var(--Black);
     display: grid;
     padding: 1rem;
     gap: 1rem;
