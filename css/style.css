@@ -212,6 +212,32 @@ a {
     color: var(--Black);
     background-color: transparent;
     transition: 0.2s ease-in-out;
+    height: auto;
+    resize: none;
+}
+
+.desc-product{
+    border: none;
+    resize: none;
+    outline: none;
+    transition: .2s;
+    padding: 0rem;
+    color: var(--blue);
+    font-size: 1rem;
+}
+
+.input-datetime {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+    outline: none;
+    font-size: 1rem;
+    color: var(--Black);
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+    height: auto;
+    resize: none;
 }
 
 textarea{
@@ -890,6 +916,7 @@ textarea{
     display: grid;
     gap: 1.5rem;
     border-radius: 1rem;
+    height: auto;
 }
 
 .name-product {

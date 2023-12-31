@@ -1,3 +1,91 @@
+// /*Adaptable*/
+// const textareas = document.querySelectorAll('.input');
+
+// function adjustTextareaHeight(textarea) {
+//     textarea.style.height = 'auto';
+//     textarea.style.height = (textarea.scrollHeight) + 'px';
+// }
+
+// // Ajusta la altura de todos los textarea al cargar la página
+// window.addEventListener('load', function () {
+//     textareas.forEach(function (textarea) {
+//         adjustTextareaHeight(textarea);
+//     });
+// });
+
+// // Ajusta la altura del textarea al escribir
+// textareas.forEach(function (textarea) {
+//     textarea.addEventListener('input', function () {
+//         adjustTextareaHeight(this);
+//     });
+// });
+
+
+
+// const desc = document.querySelectorAll('.desc-product');
+
+// function adjustTextareaHeight(desc) {
+//     desc.style.height = 'auto';
+//     desc.style.height = (desc.scrollHeight) + 'px';
+// }
+
+// // Ajusta la altura de todos los textarea al cargar la página
+// window.addEventListener('load', function () {
+//     desc.forEach(function (desc) {
+//         adjustTextareaHeight(desc);
+//     });
+// });
+
+// // Ajusta la altura del textarea al escribir
+// desc.forEach(function (desc) {
+//     desc.addEventListener('input', function () {
+//         adjustTextareaHeight(this);
+//     });
+// });
+
+// Función para ajustar la altura del textarea
+
+// function ajustarAlturaTextarea(textarea) {
+//     textarea.style.height = "auto";
+//     textarea.style.height = textarea.scrollHeight + "px";
+// }
+
+// const textAreas = document.querySelectorAll(".textArea");
+
+// textAreas.forEach(function (textarea) {
+//     textarea.addEventListener("input", function () {
+//         ajustarAlturaTextarea(this);
+//     });
+//     window.addEventListener("resize", function () {
+//         ajustarAlturaTextarea(textarea);
+//     });
+//     const initialValue = textarea.value;
+//     textarea.value = initialValue;
+//     ajustarAlturaTextarea(textarea);
+// });
+
+const textareas = document.querySelectorAll('.textArea');
+
+function adjustTextareaHeight(textarea) {
+    textarea.style.height = 'auto';
+    textarea.style.height = (textarea.scrollHeight) + 'px';
+}
+
+// Ajusta la altura de todos los textarea al cargar la página
+window.addEventListener('load', function () {
+    textareas.forEach(function (textarea) {
+        adjustTextareaHeight(textarea);
+    });
+});
+
+// Ajusta la altura del textarea al escribir
+textareas.forEach(function (textarea) {
+    textarea.addEventListener('input', function () {
+        adjustTextareaHeight(this);
+    });
+});
+
+
 
 /*btn-actions*/
 
@@ -65,9 +153,12 @@ function AddedProduct() {
         sectionTextProduct.appendChild(ProductNumber);
 
         let descriptProductCard = document.createElement('textarea');
-        descriptProductCard.textContent = descProduct;
-        descriptProductCard.classList.add('desc-product');
+        descriptProductCard.classList.add('desc-product', 'textArea');
+        descriptProductCard.value = descProduct;
+        descriptProductCard.rows = '1';
+        descriptProductCard.required = true;
         sectionTextProduct.appendChild(descriptProductCard)
+
 
         let sectionAmountBtn = document.createElement('section');
         sectionAmountBtn.classList.add('amount-product');
@@ -105,6 +196,7 @@ function AddedProduct() {
             // Llamar a la función para eliminar el producto
             removeProduct(cardProduct);
             updateTotalProducts(-1);
+            ShowRemoveForm();
         });
         btnActions.appendChild(btnDelete);
 
@@ -121,12 +213,34 @@ function AddedProduct() {
         productsContainer.appendChild(cardProduct);
         assignEventsBtnActions();
         assignEventsBtnAmount();
-        updateTotalProducts(1); 
+        updateTotalProducts(1);
+        ShowRemoveForm();
+
+        function ajustarAlturaTextarea(textarea) {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+        }
+        
+        const textAreas = document.querySelectorAll(".textArea");
+        
+        textAreas.forEach(function (textarea) {
+            textarea.addEventListener("input", function () {
+                ajustarAlturaTextarea(this);
+            });
+            window.addEventListener("resize", function () {
+                ajustarAlturaTextarea(textarea);
+            });
+            const initialValue = textarea.value;
+            textarea.value = initialValue;
+            ajustarAlturaTextarea(textarea);
+        });
 
     } else {
-      
+
     }
 }
+
+
 
 function removeProduct(product) {
     productsContainer.removeChild(product);
@@ -176,11 +290,30 @@ function assignEventsBtnAmount() {
 }
 
 const AmountProductAdded = document.querySelector('.AmountProductAdded');
+const FormDataDelivery = document.querySelector('.formulario');
+const imgForm = document.querySelector('.img-add-product');
+const textAmountProduct = document.querySelector('.countProduct');
+
+
 let totalProducts = 0;
 
 function updateTotalProducts(value) {
     totalProducts += value;
-    AmountProductAdded.textContent = totalProducts; // Actualizar el elemento AmountProductAdded
+    AmountProductAdded.textContent = totalProducts;
+}
+
+function ShowRemoveForm() {
+    if (totalProducts >= 1) {
+        FormDataDelivery.style.display = 'grid';
+        imgForm.style.display = 'none';
+        textAmountProduct.style.display = 'grid';
+
+    }else if(totalProducts === 0){
+        FormDataDelivery.style.display = 'none';
+        imgForm.style.display = 'grid';
+        textAmountProduct.style.display = 'none';
+
+    }
 }
 
 
@@ -224,29 +357,24 @@ function RecoverInformation() {
     const time = document.querySelector("#dateDeliveryinput").value;
     const date = document.querySelector("#timeDeliveryinput").value;
 
-    alert(productInfo);
+    let additionalInfo = '';
 
-    // productInfoTextarea.value = productInfo;
+    if (typedelivery === "Agendado") {
+        additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
+    }
 
-    // let additionalInfo = '';
+    const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
 
-    // if (typedelivery === "Agendado") {
-    //     // Agrega la hora y fecha solo si el tipo de entrega es "Agendado"
-    //     additionalInfo = `%0A%0A*Hora de entrega:*%0A${time}%0A%0A*Fecha de entrega:*%0A${date}`;
-    // }
-
-    // const mensaje = `send?phone=${telefono}&text=*ENVIADO DESDE LA WEB*%0A%0A*Tipo de servicio:*%0AComida%0A%0A*Comercio:*%0A${Shop}%0A%0A${encodeURIComponent(productInfo)}*Dirección de entrega:*%0A${direction}%0A%0A*Whats'App:*%0A${whatsapp}%0A%0A*Forma de pago:*%0A${typedelivery}%0A%0A*Tipo de pedido:*%0A${payDelivery}${additionalInfo}`;
-
-    // if (isMobile()) {
-    //     window.open(urlMobile + mensaje, '_blank');
-    // } else {
-    //     window.open(urlDesktop + mensaje, '_blank');
-    // }
-    // if (isMobile()) {
-    //     window.open(urlMobile + mensaje, '_blank');
-    // } else {
-    //     window.open(urlDesktop + mensaje, '_blank');
-    // }
+    if (isMobile()) {
+        window.open(urlMobile + mensaje, '_blank');
+    } else {
+        window.open(urlDesktop + mensaje, '_blank');
+    }
+    if (isMobile()) {
+        window.open(urlMobile + mensaje, '_blank');
+    } else {
+        window.open(urlDesktop + mensaje, '_blank');
+    }
 
 }
 
@@ -285,17 +413,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-const navOpenShop = document.querySelector('#nav-open-shop');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) { 
-        navOpenShop.classList.add('blur');
-    } else {
-        navOpenShop.classList.remove('blur');
-    }
-});
 
 
-
-/**/
 

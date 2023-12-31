@@ -229,37 +229,49 @@
                             <form action="" class="grid-open-shop">
                                 <article class="input-container">
                                     <label for="">Producto:</label> 
-                                    <textarea class="input descP" required placeholder="Descripción del producto..." rows="1"></textarea>
+                                    <textarea class="input descP textArea" required placeholder="Descripción del producto..." rows="1"></textarea>
                                 </article>
                                 <article class="input-container">
                                     <label for="">Cantidad de producto:</label>
-                                    <input class="input numberP" required placeholder="0" type="number">
+                                    <input class="input numberP textArea" required placeholder="0" type="number">
                                 </article>
                                 <p class="btn btn-primary btn-add-product">Agregar mi producto</p>  
                             </form>
                         </section>
 
-                        <section class="grid form-add-product">
-                            <h2 class="title-second">Productos <span class="red-text">agregados.</span></h2>
-                            <p class="ProductAmount"><span class="AmountProductAdded">0</span> Productos agregados.</p>
+                        <section class="grid-open-shop ">
+                            <section style="display: none;" class="grid countProduct">
+                                <h2 class="title-second">Productos <span class="red-text">agregados.</span></h2>
+                                <p class="ProductAmount"><span class="AmountProductAdded">0</span> Productos agregados.</p>
+                            </section>
+                            <section class="img-add-product grid">
+                                <img src="svg/order-confirmation-isometric.svg" alt="">
+                                <h2 class="title-second center">¡Agrega un producto!</h2>
+                                <p class="center">Agrega productos para poder comenzar tu pedido.</p>
+                            </section>
                         </section>
 
                         <section class="products-added grid">
                             
                         </section>
 
-                        <section class="grid form-add-product">
-                            <h2 class="title-second">Datos de <span class="red-text">entrega.</span></h2>
-                        </section>
+                        
 
-                        <form id="formulario" class="formulario grid-open-shop" action="">
+                        <form id="formulario" style="display: none;" class="formulario grid-open-shop" action="">
+                           
+                            <section class="grid form-add-product">
+                                <h2 class="title-second">Datos de <span class="red-text">entrega.</span></h2>
+                            </section>
+
+                            
+
                             <article class="input-container">
                                 <label for="">Dirección de entrega:</label>
-                                <textarea id="direccion" class="input" required placeholder="Escribe la dirección de entrega" rows="1"></textarea>
+                                <textarea id="direccion" class="input textArea" required placeholder="Escribe la dirección de entrega" rows="1"></textarea>
                             </article>
                             <article class="input-container">
                                 <label for="">Numero de Whats'App:</label>
-                                <input id="whatsapp" class="input" required placeholder="Escribe tu Whats'App de contacto" type="number">
+                                <input id="whatsapp" class="input textArea" required placeholder="Escribe tu Whats'App de contacto" type="number">
                             </article>
                             <article class="input-container">
                                 <label for="">Forma de pago:</label>
@@ -283,12 +295,12 @@
                             </article>
                             <article id="dateDelivery" style="display: none;" class="input-container">
                                 <label for="dateDelivery">Fecha de entrega:</label>
-                                <input id="dateDeliveryinput"  class="input" type="date">
+                                <input id="dateDeliveryinput"  class="input-datetime" type="date">
                             </article>
                             
                             <article id="timeDelivery" style="display: none;" class="input-container">
                                 <label for="timeDelivery">Hora de entrega:</label>
-                                <input id="timeDeliveryinput" class="input" type="time">
+                                <input id="timeDeliveryinput" class="input-datetime" type="time">
                             </article>
 
                             <p><b>Cada pedido está sujeto a una tarifa inicial de 2.50 $* esta dependerá del destino final del pedido.</b></p>
