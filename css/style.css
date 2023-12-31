@@ -877,13 +877,15 @@ textarea{
     inset: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--Black);
+    background-color: rgba(108, 108, 108, 0.374);
+    backdrop-filter: blur(3px);
     display: grid;
     padding: 1rem;
     gap: 1rem;
     align-items: end;
     justify-content: center;
     overflow-x: auto;
+    transition: 0.2s ease-in-out;
 }
 
 .img-menu-shop .img-full-screen img{
