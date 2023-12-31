@@ -33,6 +33,9 @@ body {
     --hoverSecond: #fff2f1;
     --hoverSecondText: #c6170f;
     --activeSecond: #ffe1e0;
+    --border-green: #00a208;
+    --bg-green: #d1ffbf;
+
 }
 
 
@@ -254,9 +257,9 @@ textarea{
 }
 
 .input:focus {
-    border: 1px solid var(--red);
-    background-color: var(--lightgrey);
-    color: var(--red);
+    border: 1px solid var(--gray);
+    /* background-color: var(--lightgrey); */
+    color: var(--gray);
 }
 
 .input-icon {
@@ -285,6 +288,12 @@ textarea{
 .combobox:focus {
     border: 1px solid var(--border);
     color: var(--gray);
+}
+
+.input-correct{
+    background-color: var(--bg-green);
+    color: var(--border-green);
+    border: 1px solid var(--border-green);
 }
 
 /*btn toggle*/
@@ -961,4 +970,20 @@ textarea{
 
 .text-products-added {
     margin-top: 4rem;
+}
+
+.svg-img-producto{
+    animation: floatAnimation 3s infinite ease-in-out;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateY(10px); /* Mueve la imagen hacia la derecha al 50% de la animación */
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }

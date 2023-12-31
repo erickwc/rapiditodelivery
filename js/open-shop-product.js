@@ -1,68 +1,4 @@
-// /*Adaptable*/
-// const textareas = document.querySelectorAll('.input');
 
-// function adjustTextareaHeight(textarea) {
-//     textarea.style.height = 'auto';
-//     textarea.style.height = (textarea.scrollHeight) + 'px';
-// }
-
-// // Ajusta la altura de todos los textarea al cargar la página
-// window.addEventListener('load', function () {
-//     textareas.forEach(function (textarea) {
-//         adjustTextareaHeight(textarea);
-//     });
-// });
-
-// // Ajusta la altura del textarea al escribir
-// textareas.forEach(function (textarea) {
-//     textarea.addEventListener('input', function () {
-//         adjustTextareaHeight(this);
-//     });
-// });
-
-
-
-// const desc = document.querySelectorAll('.desc-product');
-
-// function adjustTextareaHeight(desc) {
-//     desc.style.height = 'auto';
-//     desc.style.height = (desc.scrollHeight) + 'px';
-// }
-
-// // Ajusta la altura de todos los textarea al cargar la página
-// window.addEventListener('load', function () {
-//     desc.forEach(function (desc) {
-//         adjustTextareaHeight(desc);
-//     });
-// });
-
-// // Ajusta la altura del textarea al escribir
-// desc.forEach(function (desc) {
-//     desc.addEventListener('input', function () {
-//         adjustTextareaHeight(this);
-//     });
-// });
-
-// Función para ajustar la altura del textarea
-
-// function ajustarAlturaTextarea(textarea) {
-//     textarea.style.height = "auto";
-//     textarea.style.height = textarea.scrollHeight + "px";
-// }
-
-// const textAreas = document.querySelectorAll(".textArea");
-
-// textAreas.forEach(function (textarea) {
-//     textarea.addEventListener("input", function () {
-//         ajustarAlturaTextarea(this);
-//     });
-//     window.addEventListener("resize", function () {
-//         ajustarAlturaTextarea(textarea);
-//     });
-//     const initialValue = textarea.value;
-//     textarea.value = initialValue;
-//     ajustarAlturaTextarea(textarea);
-// });
 
 const textareas = document.querySelectorAll('.textArea');
 
@@ -86,6 +22,26 @@ textareas.forEach(function (textarea) {
 });
 
 
+function validarTexto(texto) {
+    var input = document.querySelectorAll('.input');
+
+    if (texto.length > 0) {
+      // Puedes agregar cualquier lógica de validación aquí
+      // Por ejemplo, aquí se verifica si el texto contiene solo letras
+      var soloLetras = /^[a-zA-Z]+$/.test(texto);
+
+      if (soloLetras) {
+        input.classList.remove("texto-invalido");
+        input.classList.add("texto-valido");
+      } else {
+        input.classList.remove("texto-valido");
+        input.classList.add("texto-invalido");
+      }
+    } else {
+      // Si el campo está vacío, quitar cualquier clase de color
+      input.classList.remove("texto-valido", "texto-invalido");
+    }
+  }
 
 /*btn-actions*/
 
@@ -411,6 +367,8 @@ document.addEventListener("DOMContentLoaded", function () {
         date.style.display = 'grid';
     }
 });
+
+
 
 
 
