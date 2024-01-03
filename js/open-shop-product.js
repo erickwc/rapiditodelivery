@@ -361,7 +361,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (image.classList.contains('img-full-screen')) {
             image.classList.remove('img-full-screen');
         } else {
-            // Remueve la clase 'img-fullscreen' de todas las imágenes antes de agregarla a la actual
             images.forEach(img => img.classList.remove('.img-full-screen'));
             image.classList.add('img-full-screen');
         }
@@ -369,6 +368,91 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const tags = document.querySelectorAll('.tag');
+    const products = document.querySelectorAll('.card-shop');
+
+    tags.forEach(tag => {
+        tag.addEventListener('click', function () {
+            const selectedTag = this.textContent.toLowerCase();
+
+            // Restablecer la visibilidad de todos los artículos
+            products.forEach(product => {
+                product.classList.remove('hidden');
+            });
+
+            // Aplicar el filtro del nuevo tag
+            products.forEach(product => {
+                const productTags = product.dataset.tags.toLowerCase().split(','); // Dividir los tags
+                const isVisible = productTags.includes(selectedTag);
+
+                if (!isVisible) {
+                    product.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+
+
+const imgSearch = document.querySelector('.img-search-shop');
+const recomended = document.querySelector('.recomended');
+
+
+document.addEventListener("keyup", e => {
+    if (e.target.matches("#buscador")) {
+        if (e.key === "Escape") e.target.value = "";
+
+        const searchTerm = e.target.value.toLowerCase();
+        const frutas = document.querySelectorAll(".name-shop-card");
+
+        frutas.forEach(fruta => {
+            const cardShop = fruta.closest('.card-shop');
+
+            fruta.textContent.toLowerCase().includes(searchTerm)
+                ? cardShop.classList.remove("hidden")
+                : cardShop.classList.add("hidden"), imgSearch.classList.remove("hidden"), recomended.classList.add("hidden");
+        });
+    }
+});
 
 
 
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const tags = document.querySelectorAll('.tag');
+
+//     tags.forEach(tag => {
+//         tag.addEventListener('click', function() {
+//             toggleFullScreen(tag);
+//         });
+//     });
+
+//     function toggleFullScreen(clickedTag) {
+//         if (clickedTag.classList.contains('tag-active')) {
+//             clickedTag.classList.remove('tag-active');
+//         } else {
+//             tags.forEach(tag => tag.classList.remove('tag-active'));
+//             clickedTag.classList.add('tag-active');
+//         }
+//     }
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tags = document.querySelectorAll('.tag');
+
+    tags.forEach(tag => {
+        tag.addEventListener('click', function() {
+            toggleFullScreen(tag);
+        });
+    });
+
+    function toggleFullScreen(tag) {
+        if (tag.classList.contains('tag-active')) {
+            tag.classList.remove('tag-active');
+        } else {
+            tags.forEach(img => img.classList.remove('tag-active'));
+            tag.classList.add('tag-active');
+        }
+    }
+});

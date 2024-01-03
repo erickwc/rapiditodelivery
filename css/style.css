@@ -12,9 +12,9 @@ html {
 }
 
 body {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 100%;
-    gap: 8.125rem;
+    gap: 8.125rem; */
     background-color: var(--white);
     transition: 0.3s ease-in-out;
 }
@@ -43,8 +43,12 @@ body {
     width: 80%;
     display: grid;
     overflow: hidden;
-    margin: auto auto;
     max-width: 1024px;
+    margin: auto auto;
+}
+
+.separator{
+    margin-top: 8.125rem;
 }
 
 ::selection{
@@ -376,10 +380,10 @@ textarea{
     color: var(--gray);
 }
 
-.tag-second:focus {
+/* .tag-second:focus {
     background-color: var(--red);
     color: var(--white);
-}
+} */
 
 .cont-tags {
     display: flex;
@@ -402,6 +406,12 @@ textarea{
 
 .cont-tags-scroll .tag {
     cursor: pointer;
+}
+
+
+.tag-active{
+    background-color: var(--red);
+    color: var(--white);
 }
 
 /*grids*/
@@ -720,13 +730,13 @@ textarea{
     position: absolute;
     right: 0;
     top: 0;
-    padding: 1.5rem;
+    padding: 0.8rem;
 }
 
 .favorite {
     width: 2.5rem;
     height: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.068);
+    background-color: rgba(255, 255, 255, 0.926);
     backdrop-filter: blur(20px);
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -1028,4 +1038,10 @@ textarea{
     100% {
         transform: translateY(0px);
     }
+}
+
+/*buscador*/
+
+.hidden{
+    display: none;
 }
