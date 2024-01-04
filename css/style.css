@@ -947,7 +947,7 @@ textarea {
     padding: 0rem 2.6rem;
     animation: nav-bar-shop linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 300px;
+    animation-range: 0 150px;
     transition: 0.3s ease-in-out;
     border-top: #f7f7f700 0px solid;
 }
@@ -960,22 +960,21 @@ textarea {
     transition: 0.3s ease-in-out;
 }
 
-.nav-open-shop .btn{
+.nav-open-shop .regresar{
     color: var(--white);
-    animation: change-color-btn linear both;
+    animation: change-color linear both;
     animation-timeline: scroll(root);
     animation-range: 0 150px;
     transition: 0.3s ease-in-out;
-    border: 1px solid var(--white);
+     font-size: 1.5rem;
 }
 
 
 @keyframes nav-bar-shop {
     to {
-        background-color: rgba(255, 255, 255, 0.885);
-        border-top: #f7f7f7 1px solid;
+        background-color: rgba(255, 255, 255, 0.968);
+        border-bottom: #f7f7f7 1px solid;
         backdrop-filter: blur(15px);
-        top: 89%;
         
     }
 }
@@ -986,12 +985,7 @@ textarea {
     }
 }
 
-@keyframes change-color-btn {
-    to {
-       color: var(--red);
-       border: 1px solid var(--red);
-    }
-}
+
 
 
 
