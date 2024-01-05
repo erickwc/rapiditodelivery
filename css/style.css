@@ -736,11 +736,13 @@ textarea {
 .favorite {
     width: 2.5rem;
     height: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.926);
+    background-color: rgb(255, 255, 255);
     backdrop-filter: blur(20px);
     padding: 0.5rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    fill: rgb(232, 232, 232);
+    overflow: auto;
 }
 
 .favorite path {
@@ -748,9 +750,10 @@ textarea {
     font-size: 2.5rem;
 }
 
-[type="checkbox"]:checked+.favorite path {
+[type="checkbox"]:checked + .favorite path {
     fill: var(--red);
 }
+
 
 /*-------------------------about---------------------------*/
 
@@ -969,6 +972,11 @@ textarea {
      font-size: 1.5rem;
 }
 
+.nav-open-shop a{
+    display: grid;
+    place-items: center;
+}
+
 
 @keyframes nav-bar-shop {
     to {
@@ -1079,3 +1087,4 @@ textarea {
 .hidden {
     display: none;
 }
+
