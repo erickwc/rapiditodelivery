@@ -12,9 +12,6 @@ html {
 }
 
 body {
-    /* display: grid;
-    grid-template-columns: 100%;
-    gap: 8.125rem; */
     background-color: var(--white);
     transition: 0.3s ease-in-out;
 }
@@ -35,7 +32,6 @@ body {
     --activeSecond: #ffe1e0;
     --border-green: #00a208;
     --bg-green: #d1ffbf;
-
 }
 
 
@@ -732,6 +728,7 @@ textarea {
     right: 0;
     top: 0;
     padding: 0.8rem;
+    display: none;
 }
 
 .favorite {
@@ -951,16 +948,17 @@ textarea {
     padding: 0rem 2.6rem;
     animation: nav-bar-shop linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 150px;
+    animation-range: 0 100px;
     transition: 0.3s ease-in-out;
     border-top: #f7f7f700 0px solid;
+    border-bottom: var(--white) 0px solid;
 }
 
 .nav-open-shop h3{
     color: var(--white);
     animation: change-color linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 150px;
+    animation-range: 0 50px;
     transition: 0.3s ease-in-out;
 }
 
@@ -968,7 +966,7 @@ textarea {
     color: var(--white);
     animation: change-color linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 150px;
+    animation-range: 0 50px;
     transition: 0.3s ease-in-out;
      font-size: 1.5rem;
 }
@@ -1080,7 +1078,6 @@ textarea {
 
     50% {
         transform: translateY(10px);
-        /* Mueve la imagen hacia la derecha al 50% de la animación */
     }
 
     100% {
@@ -1092,5 +1089,31 @@ textarea {
 
 .hidden {
     display: none;
+}
+
+/* Modal */
+
+.alert-modal-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+    background-color: rgba(165, 165, 165, 0.308);
+}
+
+.alert-modal{
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    animation: .2s ease-in-out;
+}
+
+.alert-modal-container:target{
+    transform: translateY(0%);
+    inset: 0;
 }
 

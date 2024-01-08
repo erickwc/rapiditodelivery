@@ -14,12 +14,15 @@
     <link rel="stylesheet" href="/css/inputs.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 </head>
+
 <body>
+
     <body>
         <section id="siciliana" class="open-shop z-500">
             <article class="open-container">
                 <section class="logo-shop">
-                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
                     <nav id="nav-open-shop" class="nav-open-shop flex z-500">
                         <a href="index.html"><i class="at-arrow-left regresar"></i></a>
                         <h3 id="shopname" class="title-second">Depositos</h3>
@@ -30,7 +33,7 @@
                         <article class="flex">
                             <h3 id="shopname" class="title-second">Depositos</h3>
                         </article>
-                        
+
                         <section class="tags grid">
                             <h3 class="title-third">Tags</h3>
                             <article class="cont-tags">
@@ -39,10 +42,10 @@
                                 <p class="tag tag-second">Depositos</p>
                             </article>
                         </section>
-    
-    
+
+
                         <form name="formulario-super" id="formulario" class="formulario grid-open-shop" action="">
-    
+
                             <section class="grid form-add-product">
                                 <h2 class="title-second">Datos de <span class="red-text">deposito.</span></h2>
                             </section>
@@ -58,7 +61,7 @@
                                 <input id="numberAcount" class="input textArea" required
                                     placeholder="Escribe el numero de cuenta" type="number">
                             </article>
-    
+
                             <article class="input-container">
                                 <label for="">Selecciona el Banco:</label>
                                 <select required id="typeBanck" class="input combobox">
@@ -71,13 +74,13 @@
                             </article>
                             <article class="input-container">
                                 <label for="">Nombre Completo:</label>
-                                <textarea id="nameComplete"  class="input textArea" required
+                                <textarea id="nameComplete" class="input textArea" required
                                     placeholder="Escribe tu nombre completo" rows="1"></textarea>
                             </article>
-    
+
                             <article class="input-container">
                                 <label for="">Tu Direccion:</label>
-                                <textarea id="direccion"  class="input textArea" required
+                                <textarea id="direccion" class="input textArea" required
                                     placeholder="Escribe la dirección de entrega" rows="1"></textarea>
                             </article>
                             <article class="input-container">
@@ -109,24 +112,35 @@
                                 <label for="dateDelivery">Fecha de entrega:</label>
                                 <input id="dateDeliveryinput" class="input-datetime" type="date">
                             </article>
-    
+
                             <article id="timeDelivery" style="display: none;" class="input-container">
                                 <label for="timeDelivery">Hora de entrega:</label>
                                 <input id="timeDeliveryinput" class="input-datetime" type="time">
                             </article>
-    
+
                             <p><b>Cada pedido está sujeto a una tarifa inicial de 2.50 $* esta dependerá del destino
                                     final del pedido.</b></p>
-    
-                            <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+
+                            <section class="grid">
+                                <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                                <a href="#alert" class="btn btn-second" type="submit" id="cancel">Cancelar Solicitud</a>
+                            </section>
                         </form>
-    
                 </article>
             </article>
         </section>
+
+        <section id="alert" class="alert-modal-container">
+            <article class="container alert-modal grid">
+                <h2 class="title-second center">¿Seguro que quieres cancelar tu pedido?</h2>
+                <p class="center">Si cancelas tu pedido se borraran todos los datos ingresados hasta el momento.</p>
+                <a class="btn btn-primary" href="#formulario">Continuar Pedido</a>
+                <a class="btn btn-second" href="index.html">Cancelar Pedido</a>
+            </article>
+        </section>
         <script src="/js/send-whatsapp-depositos.js"></script>
-        <!-- <script src="/js/open-shop-product.js"></script> -->
         <script src="/js/open-img-menu.js"></script>
     </body>
 </body>
+
 </html>

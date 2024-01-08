@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercios l Rapidito Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@vectopus/atlas-icons/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/inputs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <section class="logo-shop">
+        <nav id="nav-open-shop" class="nav-open-shop flex z-500">
+            <a href="index.html"><i class="at-arrow-left regresar"></i></a>
+            <h3 id="shopname" class="title-second">Registrate</h3>
+        </nav>
+    </section>
+
+    <main id="register" class="container">
+        <form id="formulario" class="formulario grid-open-shop" action="">
+            <section class="grid form-add-product">
+                <div class="">
+                    <p class="tag tag-primary">Comienza el registro</p>
+                </div>
+                <h2 class="title-second">Regístrate ahora mismo y comienzo <span class="red-text">incrementar tus ventas</span></h2>
+            </section>
+            <article class="input-container">
+                <label for="">Nombre de tu comercio:</label>
+                <textarea id="nameShop" class="input textArea" required
+                    placeholder="Escribe el nombre aqui..." rows="1"></textarea>
+            </article>
+            <article class="input-container">
+                <label for="">Categorias a las que se enfoca tu comercio:</label>
+                <textarea id="categorys" class="input textArea" required
+                    placeholder="Ej. ropa, zapatos, electrodomesticos etc." rows="1"></textarea>
+            </article>
+            <article class="input-container">
+                <label for="">Ubicacion de tu comercio:</label>
+                <textarea id="location" class="input textArea" required
+                    placeholder="Escribe la ubicacion de tu comercio" rows="1"></textarea>
+            </article>
+            <article class="input-container">
+                <label for="">Numero de contacto:</label>
+                <input id="whatsapp" class="input textArea" required
+                    placeholder="Escribe un Whats'App de contacto" type="number">
+            </article>
+            <article class="input-container">
+                <label for="">Horarios de servicio:</label>
+                <input id="dayservices" class="input textArea" required
+                    placeholder="Escribe las horas de servicio" type="time">
+            </article>
+            <article class="input-container">
+                <label for="">Dias de servicio:</label>
+                <input id="timeservices" class="input textArea" required
+                    placeholder="Ej. Lunes - Domingo" type="text">
+            </article>
+            <p><b>Puedes proporcionarnos las imagenes de tu logo y de tus productos al enviar la información de tu comercio por medio de Whats’App.</b></p>
+           
+            <section class="grid">
+                <button class="btn btn-primary" type="submit" id="submit">Enviar solicitud a Whats'App</button>
+                <a href="#alert" class="btn btn-second" type="submit" id="cancel">Cancelar Solicitud</a>
+            </section>
+            </form>
+
+            <div class="separator"></div>
+    </main>
+
+    <section id="alert" class="alert-modal-container">
+        <article  class="container alert-modal grid">
+            <h2 class="title-second center">¿Seguro que quieres cancelar la solicitud?</h2>
+            <p class="center">Si cancelas la solicitud se borraran los datos ingresados hasta ahorita.</p>
+            <a class="btn btn-primary" href="#">Continuar Solicitud</a>
+            <a class="btn btn-second" href="index.html">Cancelar Solicitud</a>
+        </article>
+    </section>
+
+    <footer class="footer separator">
+        <section class="footer-container grid container">
+            <section class="text-footer grid">
+                <h2 class="title-second"> <span class="white-text">¿Eso </span><span class="red-text">es todo?</span>
+                </h2>
+                <p class="white-text">¡Claro que no! Estamos esperando tu pedido para llevártelo rapidito y seguro.</p>
+            </section>
+            <section class="buttons-footer grid">
+                <a class="btn btn-primary" href="#services">Comenzar mi pedido</a>
+
+                <article class="buttons-networks">
+                    <a class="btn-networks" href="#"><i class="at-whatsapp"></i></a>
+                    <a class="btn-networks" href="#"><i class="at-facebook"></i></a>
+                </article>
+            </section>
+        </section>
+    </footer>
+
+    <script src="js/textarea.js"></script>
+    <script src="js/send-whatsapp-application.js"></script>
+</body>
+</html>

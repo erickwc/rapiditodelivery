@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Comercios l Rapidito Delivery</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Righteous&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/@vectopus/atlas-icons/style.css">
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/inputs.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercios l Rapidito Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@vectopus/atlas-icons/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/inputs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
 <body>
     <section id="leia" class="open-shop z-500">
         <article class="open-container">
@@ -57,7 +59,7 @@
                     </section>
 
 
-                    <section class="form-add-product grid-open-shop">
+                    <section id="products" class="form-add-product grid-open-shop">
                         <section class="grid">
                             <h2 class="title-second">Comenzar <span class="red-text">mi pedido.</span></h2>
                         </section>
@@ -146,10 +148,21 @@
                         <p><b>Cada pedido está sujeto a una tarifa inicial de 2.50 $* esta dependerá del destino
                                 final del pedido.</b></p>
 
-                        <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                        <section class="grid">
+                            <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                            <a href="#alert" class="btn btn-second" type="submit" id="cancel">Cancelar Solicitud</a>
+                        </section>
                     </form>
-
             </article>
+        </article>
+    </section>
+
+    <section id="alert" class="alert-modal-container">
+        <article class="container alert-modal grid">
+            <h2 class="title-second center">¿Seguro que quieres cancelar tu pedido?</h2>
+            <p class="center">Si cancelas tu pedido se borraran todos los datos ingresados hasta el momento.</p>
+            <a class="btn btn-primary" href="#products">Continuar Pedido</a>
+            <a class="btn btn-second" href="shops.html">Cancelar Pedido</a>
         </article>
     </section>
 
@@ -158,4 +171,5 @@
     <script src="/js/open-img-menu.js"></script>
     <script src="/js/send-whatsapp-eat.js"></script>
 </body>
+
 </html>

@@ -59,7 +59,7 @@
                     </section>
 
 
-                    <section class="form-add-product grid-open-shop">
+                    <section id="products" class="form-add-product grid-open-shop">
                         <section class="grid">
                             <h2 class="title-second">Comenzar <span class="red-text">mi pedido.</span></h2>
                         </section>
@@ -74,7 +74,7 @@
                                 <label for="">Cantidad de producto:</label>
                                 <input class="input numberP textArea" required placeholder="0" type="number">
                             </article>
-                            
+
                             <p class="btn btn-primary btn-add-product">Agregar mi producto</p>
                         </form>
                     </section>
@@ -147,10 +147,21 @@
                         <p><b>Cada pedido está sujeto a una tarifa inicial de 2.50 $* esta dependerá del destino
                                 final del pedido.</b></p>
 
-                        <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                        <section class="grid">
+                            <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                            <a href="#alert" class="btn btn-second" type="submit" id="cancel">Cancelar Solicitud</a>
+                        </section>
                     </form>
-
             </article>
+        </article>
+    </section>
+
+    <section id="alert" class="alert-modal-container">
+        <article class="container alert-modal grid">
+            <h2 class="title-second center">¿Seguro que quieres cancelar tu pedido?</h2>
+            <p class="center">Si cancelas tu pedido se borraran todos los datos ingresados hasta el momento.</p>
+            <a class="btn btn-primary" href="#products">Continuar Pedido</a>
+            <a class="btn btn-second" href="shops.html">Cancelar Pedido</a>
         </article>
     </section>
     <script src="/js/send-whatsapp-eat.js"></script>
