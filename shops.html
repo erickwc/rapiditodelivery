@@ -60,6 +60,7 @@
                 <h3 class="title-third">Categorias</h3>
                 <section class="cont-tags-scroll">
                         <a href="#shops" class="tag tag-second tag-active">Todos</button>
+                            <a href="#shops" class="tag tag-second tag-second">Favoritos ❤</button>
                         <a href="#shops" class="tag tag-second">Pupusas</a>
                         <a href="#shops" class="tag tag-second">Almuerzos</a>
                         <a href="#shops" class="tag tag-second">Tacos</a>
@@ -92,11 +93,11 @@
         <h2 class="title-second recomended">Lo <span class="red-text">mas recomendado.</span></h2>
         <section class="container-shops grid">
 
-            <article class="card-shop grid" data-tags="Todos, Pollo, Papas">
+            <article id="article1" class="card-shop grid" data-tags="Todos, Pollo, Papas">
                 <section href="#" class="img-shop">
                     <a href="./ChiPo.html"><img class="z-100" src="https://i.ibb.co/ZHNbccF/chipo-8.jpg" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -120,11 +121,11 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Pancakes, Frozen, Helado, Cafe">
+            <article id="article2" class="card-shop grid" data-tags="Todos, Pancakes, Frozen, Helado, Cafe">
                 <section href="#" class="img-shop">
                     <a href="./Leia.html"><img class="z-100" src="https://i.ibb.co/pZHhS6P/mini-P-1.jpg" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -150,13 +151,13 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Pizza">
+            <article id="article3" class="card-shop grid" data-tags="Todos, Pizza">
 
                 <section href="#" class="img-shop">
                     <a href="./siciliana.html"><img class="z-100" src="https://i.ibb.co/rdHB01w/La-Siciliana.jpg"
                             alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -180,13 +181,13 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Panes">
+            <article id="article4" class="card-shop grid" data-tags="Todos, Panes">
 
                 <section href="#" class="img-shop">
                     <a href="./LasAntorchas.html"><img class="z-100" src="https://i.ibb.co/y0Y64zc/Las-Antorchas.jpg"
                             alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -211,11 +212,11 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Sandwiches, Saludable">
+            <article id="article5" class="card-shop grid" data-tags="Todos, Sandwiches, Saludable">
                 <section href="#" class="img-shop">
                     <a href="./subway.html"><img class="z-100" src="https://i.ibb.co/19NvBFk/subway.png" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -238,11 +239,11 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Panes, Panes con pollo,">
+            <article id="article6" class="card-shop grid" data-tags="Todos, Panes, Panes con pollo,">
                 <section href="#" class="img-shop">
                     <a href="./niñaflor.html"><img class="z-100" src="https://i.ibb.co/KhHRmG9/nflor-3.jpg" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -267,12 +268,12 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Almuerzos, Carnes, Pollo, Cerdo">
+            <article id="article7" class="card-shop grid" data-tags="Todos, Almuerzos, Carnes, Pollo, Cerdo">
                 <section href="#" class="img-shop">
                     <a href="./lavendimia.html"><img class="z-100" src="https://i.ibb.co/gmmDpH7/Lavendimia-1.jpg"
                             alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -297,12 +298,12 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Yuca">
+            <article id="article7" class="card-shop grid" data-tags="Todos, Yuca">
                 <section href="#" class="img-shop">
                     <a href="./yuquerialosgemelos.html"><img class="z-100" src="https://i.ibb.co/kK5N14V/ylg-2.jpg"
                             alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -325,12 +326,12 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Tacos, Tortas, Alambres, Tostadas, Sincronizadas, Carnes">
+            <article id="article8" class="card-shop grid" data-tags="Todos, Tacos, Tortas, Alambres, Tostadas, Sincronizadas, Carnes">
                 <section href="#" class="img-shop">
                     <a href="./tacoslosmismos.html"><img class="z-100" src="https://i.ibb.co/ZzGVK7j/tlm-1.jpg"
                             alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -355,14 +356,13 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Pupusas, Helado">
+            <article id="article9" class="card-shop grid" data-tags="Todos, Pupusas, Helado">
                 <section href="#" class="img-shop">
-                    <a href="./pupusasdenahuizalco.html"><img class="z-100"
-                            src="https://i.ibb.co/gTGXJM5/pupusasdn-1.png" alt=""></a>
+                    <a href="./pupusasdenahuizalco.html"><img class="z-100" src="https://i.ibb.co/gTGXJM5/pupusasdn-1.png" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
-                            <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14" height="14" width="14">
+                        <label>
+                            <input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
+                            <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
                                     <path id="Union" fill-rule="evenodd"
                                         d="M4.024 1.085c0.98 0.071 2.002 0.55 2.98 1.517 0.978 -0.968 1.999 -1.445 2.978 -1.514 1.106 -0.079 2.083 0.368 2.79 1.073 1.39 1.386 1.827 3.895 0.102 5.62a0.48 0.48 0 0 1 -0.018 0.017L7.34 12.795a0.5 0.5 0 0 1 -0.672 0L1.152 7.798a0.495 0.495 0 0 1 -0.018 -0.017c-1.734 -1.734 -1.3 -4.243 0.095 -5.628 0.709 -0.704 1.688 -1.148 2.795 -1.068Z"
@@ -386,11 +386,11 @@
                 </section>
             </article>
 
-            <article class="card-shop grid" data-tags="Todos, Alitas, Chunks">
+            <article id="article10" class="card-shop grid" data-tags="Todos, Alitas, Chunks">
                 <section href="#" class="img-shop">
                     <a href="./bufalowings.html"><img class="z-100" src="https://i.ibb.co/phC1wdc/bw.jpg" alt=""></a>
                     <div class="icon z-300">
-                        <label><input class="z-300 check" type="checkbox">
+                        <label><input class="z-300 check" type="checkbox" onchange="toggleFavoritesTag(this)">
                             <svg class="z-300 favorite" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 14 14" height="14" width="14">
                                 <g id="heart--reward-social-rating-media-heart-it-like-favorite-love">
@@ -449,6 +449,7 @@
     <script src="/js/open-shop-product.js"></script>
     <script src="js/search-category.js"></script>
     <script src="js/search-input.js"></script>
+    <script src="js/shop-favorite.js"></script>
 
 
 </body>
