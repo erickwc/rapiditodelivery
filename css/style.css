@@ -223,6 +223,7 @@ a {
     resize: none;
 }
 
+
 .desc-product {
     border: none;
     resize: none;
@@ -1065,6 +1066,11 @@ textarea {
 
 .svg-img-producto {
     animation: floatAnimation 3s infinite ease-in-out;
+    max-width: 400px;
+}
+
+.img-add-product{
+    place-items: center;
 }
 
 @keyframes floatAnimation {

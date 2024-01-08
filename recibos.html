@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibos l Rapidito Delivery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@vectopus/atlas-icons/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/inputs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <body>
+        <section id="siciliana" class="open-shop z-500">
+            <article class="open-container">
+                <section class="logo-shop">
+                    <img src="https://images.unsplash.com/photo-1663609476830-8c247515c1db?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <nav id="nav-open-shop" class="nav-open-shop flex z-500">
+                        <a href="index.html"><i class="at-arrow-left regresar"></i></a>
+                        <h3 id="shopname" class="title-second">Recibos</h3>
+                    </nav>
+                </section>
+                <article class="content-shop">
+                    <section class="container grid-open-shop">
+                        <article class="flex">
+                            <h3 id="shopname" class="title-second">Recibos</h3>
+                        </article>
+
+                        <section class="tags grid">
+                            <h3 class="title-third">Tags</h3>
+                            <article class="cont-tags">
+                                <p class="tag tag-second">Pagos de Recibos</p>
+                                <p class="tag tag-second">Agua</p>
+                                <p class="tag tag-second">Luz</p>
+                                <p class="tag tag-second">Gobierno</p>
+                                <p class="tag tag-second">Otro</p>
+                            </article>
+                        </section>
+
+
+                        <form name="formulario-super" id="formulario" class="formulario grid-open-shop" action="">
+
+                            <section class="grid form-add-product">
+                                <h2 class="title-second">Datos de <span class="red-text">pedido.</span></h2>
+                            </section>
+
+                            <article class="input-container">
+                                <label for="">Numero de NIC:</label>
+                                <input id="nic" class="input textArea" required
+                                    placeholder="Escribe el numero de NIC de recibo" type="number">
+                            </article>
+
+                            <article class="input-container">
+                                <label for="">Tu Direccion:</label>
+                                <textarea id="direccion" class="input textArea" required
+                                    placeholder="Escribe la dirección de entrega" rows="1"></textarea>
+                            </article>
+
+                            <article class="input-container">
+                                <label for="">Numero de Whats'App:</label>
+                                <input id="whatsapp" class="input textArea" required
+                                    placeholder="Escribe tu Whats'App de contacto" type="number">
+                            </article>
+
+                            <article class="input-container">
+                                <label for="">Forma de pago:</label>
+                                <select required id="typepay" class="input combobox">
+                                    <option value="" selected disabled>Seleccionar</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                    <option value="Tarjeta Debito">Tarjeta Débito</option>
+                                    <option value="Tarjeta Credito">Tarjeta Crédito</option>
+                                    <option value="Chivo Wallet">Chivo Wallet</option>
+                                    <option value="Tigo Money">Tigo Money</option>
+                                    <option value="Cubo">Cubo</option>
+                                </select>
+                            </article>
+                            <article class="input-container">
+                                <label for="">Tipo de pedido:</label>
+                                <select required id="typedelivery" class="input combobox">
+                                    <option value="" selected disabled>Seleccionar</option>
+                                    <option value="Pedido de momento">Pedido del momento</option>
+                                    <option value="Agendado">Agendar pedido</option>
+                                </select>
+                            </article>
+                            <article id="dateDelivery" style="display: none;" class="input-container">
+                                <label for="dateDelivery">Fecha de entrega:</label>
+                                <input id="dateDeliveryinput" class="input-datetime" type="date">
+                            </article>
+
+                            <article id="timeDelivery" style="display: none;" class="input-container">
+                                <label for="timeDelivery">Hora de entrega:</label>
+                                <input id="timeDeliveryinput" class="input-datetime" type="time">
+                            </article>
+
+                            <p><b>Envia una foto del recibo del cual se realizara el pago.</b></p>
+
+                            <p><b>Cada pedido está sujeto a una tarifa inicial de 2.50 $* esta dependerá del destino
+                                    final del pedido.</b></p>
+
+                            <button class="btn btn-primary" type="submit" id="submit">Enviar a Whats'App</button>
+                        </form>
+
+                </article>
+            </article>
+        </section>
+        <script src="/js/send-whatsapp-recibos.js"></script>
+        <script src="/js/open-img-menu.js"></script>
+    </body>
+</body>
+
+</html>
