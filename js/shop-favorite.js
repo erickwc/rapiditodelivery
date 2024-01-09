@@ -24,13 +24,10 @@ function toggleFavoritesTag(checkbox) {
     var checkboxId = 'favoriteState_' + article.id;
 
     if (checkbox.checked && dataTags.indexOf('Favoritos ❤') === -1) {
-        // Agrega la palabra 'Favoritos ❤' al data-tags si el checkbox está marcado y aún no está presente
         article.setAttribute('data-tags', dataTags + ', Favoritos ❤');
     } else if (!checkbox.checked && dataTags.indexOf('Favoritos ❤') !== -1) {
-        // Remueve la palabra 'Favoritos ❤' del data-tags si el checkbox está desmarcado y está presente
         article.setAttribute('data-tags', dataTags.replace(', Favoritos ❤', ''));
     }
 
-    // Almacena el estado del checkbox en el localStorage
     localStorage.setItem(checkboxId, checkbox.checked);
 }

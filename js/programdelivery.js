@@ -1,27 +1,4 @@
 
-
-const textareas = document.querySelectorAll('.textArea');
-
-function adjustTextareaHeight(textarea) {
-    textarea.style.height = 'auto';
-    textarea.style.height = (textarea.scrollHeight) + 'px';
-}
-
-// Ajusta la altura de todos los textarea al cargar la página
-window.addEventListener('load', function () {
-    textareas.forEach(function (textarea) {
-        adjustTextareaHeight(textarea);
-    });
-});
-
-// Ajusta la altura del textarea al escribir
-textareas.forEach(function (textarea) {
-    textarea.addEventListener('input', function () {
-        adjustTextareaHeight(this);
-    });
-});
-
-
 /*btn-actions*/
 
 function assignEventsBtnActions() {
@@ -72,6 +49,12 @@ const productsContainer = document.querySelector('.products-added');
 function AddedProduct() {
     const descProduct = document.querySelector('.descP').value;
     const numberProduct = document.querySelector('.numberP').value;
+    const dateProduct = document.querySelector('#dateDeliveryinput').value;
+    const timeProduct = document.querySelector('#timeDeliveryinput').value;
+    // const whatsapp = document.querySelector('.whatsapp').value;
+    const locationDelivery = document.querySelector('.direccion').value;
+    // const typepay = document.querySelector('.typepay').value;
+
 
     if (descProduct.trim() !== "" && numberProduct.trim() !== "") {
 
@@ -98,6 +81,59 @@ function AddedProduct() {
         let sectionAmountBtn = document.createElement('section');
         sectionAmountBtn.classList.add('amount-product');
         cardProduct.appendChild(sectionAmountBtn)
+
+        let dataDelivery = document.createElement('section');
+        dataDelivery.classList.add('grid-section-card-program');
+        cardProduct.appendChild(dataDelivery)
+
+        let sectionDateDelivery = document.createElement('article');
+        sectionDateDelivery.classList.add('grid-small-card');
+        dataDelivery.appendChild(sectionDateDelivery)
+
+        let dateName = document.createElement('h3');
+        dateName.textContent = "Fecha de entrega:";
+        dateName.classList.add('title-third');
+        sectionDateDelivery.appendChild(dateName)
+
+        let date = document.createElement('textarea');
+        date.classList.add('desc-product', 'textArea');
+        date.value = dateProduct;
+        date.rows = '1';
+        date.required = true;
+        sectionDateDelivery.appendChild(date)
+
+        let sectionTimeDelivery = document.createElement('article');
+        sectionTimeDelivery.classList.add('grid-small-card');
+        dataDelivery.appendChild(sectionTimeDelivery)
+
+        let timeName = document.createElement('h3');
+        timeName.textContent = "Hora de entrega:";
+        timeName.classList.add('title-third');
+        sectionTimeDelivery.appendChild(timeName)
+
+        let time = document.createElement('textarea');
+        time.classList.add('desc-product', 'textArea');
+        time.value = timeProduct;
+        time.rows = '1';
+        time.required = true;
+        sectionTimeDelivery.appendChild(time)
+
+        let sectionLocationDelivery = document.createElement('article');
+        sectionTimeDelivery.classList.add('grid-small-card');
+        dataDelivery.appendChild(sectionLocationDelivery)
+
+        let locationName = document.createElement('h3');
+        locationName.textContent = "Dirección:";
+        locationName.classList.add('title-third');
+        sectionLocationDelivery.appendChild(locationName)
+
+        let location = document.createElement('textarea');
+        location.classList.add('desc-product', 'textArea');
+        location.value = locationDelivery;
+        location.rows = '1';
+        location.required = true;
+        sectionLocationDelivery.appendChild(location)
+
 
         let btnRemove = document.createElement('button');
         btnRemove.classList.add('remove', 'btn-amount');
@@ -260,18 +296,3 @@ function ShowRemoveForm() {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -418,6 +418,16 @@ textarea {
     gap: 1rem;
 }
 
+.grid-small-card {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.grid-section-card-program {
+    display: grid;
+    gap: 1.5rem;
+}
+
 .grid-center {
     display: grid;
     place-items: center;
