@@ -51,9 +51,9 @@ function AddedProduct() {
     const numberProduct = document.querySelector('.numberP').value;
     const dateProduct = document.querySelector('#dateDeliveryinput').value;
     const timeProduct = document.querySelector('#timeDeliveryinput').value;
-    // const whatsapp = document.querySelector('.whatsapp').value;
-    const locationDelivery = document.querySelector('.direccion').value;
-    // const typepay = document.querySelector('.typepay').value;
+    const whatsapp = document.querySelector('#whatsapp').value;
+    const locationDelivery = document.querySelector('#direccion').value;
+    const typepayDelivery = document.querySelector('#typepay').value;
 
 
     if (descProduct.trim() !== "" && numberProduct.trim() !== "") {
@@ -123,7 +123,7 @@ function AddedProduct() {
         dataDelivery.appendChild(sectionLocationDelivery)
 
         let locationName = document.createElement('h3');
-        locationName.textContent = "Dirección:";
+        locationName.textContent = "Dirección de entrega:";
         locationName.classList.add('title-third');
         sectionLocationDelivery.appendChild(locationName)
 
@@ -133,6 +133,38 @@ function AddedProduct() {
         location.rows = '1';
         location.required = true;
         sectionLocationDelivery.appendChild(location)
+
+        let sectionWhatsappDelivery = document.createElement('article');
+        sectionWhatsappDelivery.classList.add('grid-small-card');
+        dataDelivery.appendChild(sectionWhatsappDelivery)
+
+        let whatsappName = document.createElement('h3');
+        whatsappName.textContent = "Whats'app de contacto:";
+        whatsappName.classList.add('title-third');
+        sectionWhatsappDelivery.appendChild(whatsappName)
+
+        let whatsappNumber = document.createElement('textarea');
+        whatsappNumber.classList.add('desc-product', 'textArea');
+        whatsappNumber.value = whatsapp;
+        whatsappNumber.rows = '1';
+        whatsappNumber.required = true;
+        sectionWhatsappDelivery.appendChild(whatsappNumber)
+
+        let sectionTypePayDelivery = document.createElement('article');
+        sectionWhatsappDelivery.classList.add('grid-small-card');
+        dataDelivery.appendChild(sectionTypePayDelivery)
+
+        let typePayName = document.createElement('h3');
+        typePayName.textContent = "Forma de pago:";
+        typePayName.classList.add('title-third');
+        sectionTypePayDelivery.appendChild(typePayName)
+
+        let typePay = document.createElement('textarea');
+        typePay.classList.add('desc-product', 'textArea');
+        typePay.value = typepayDelivery;
+        typePay.rows = '1';
+        typePay.required = true;
+        sectionTypePayDelivery.appendChild(typePay)
 
 
         let btnRemove = document.createElement('button');
@@ -274,6 +306,8 @@ const AmountProductAdded = document.querySelector('.AmountProductAdded');
 const FormDataDelivery = document.querySelector('.formulario');
 const imgForm = document.querySelector('.img-add-product');
 const textAmountProduct = document.querySelector('.countProduct');
+const sendBtn = document.querySelector('#sendBtn');
+
 
 
 let totalProducts = 0;
@@ -288,11 +322,14 @@ function ShowRemoveForm() {
         FormDataDelivery.style.display = 'grid';
         imgForm.style.display = 'none';
         textAmountProduct.style.display = 'grid';
+        sendBtn.style.display = 'grid';
 
     }else if(totalProducts === 0){
         FormDataDelivery.style.display = 'none';
         imgForm.style.display = 'grid';
         textAmountProduct.style.display = 'none';
+        sendBtn.style.display = 'none';
+
 
     }
 }
