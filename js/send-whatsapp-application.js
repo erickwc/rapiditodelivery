@@ -14,7 +14,7 @@ const Shop = document.querySelector('#shopname').textContent;
 const buttonSubmit = document.querySelector('#submit');
 const urlDesktop = 'https://web.whatsapp.com/';
 const urlMobile = 'whatsapp://';
-const telefono = '50377774562';
+const telefono = '50360020057';
 
 
 function RecoverInformation() {
